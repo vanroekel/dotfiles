@@ -49,5 +49,13 @@ export TODO="t"
 # https://github.com/xvzf/vcprompt
 #export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
 
+export BASH_PROFILE_SOURCED=yes
+
+if [ -f ~/.bashrc ]; then
+    if [ -z ${BASHRC_SOURCED} ]; then
+        source ~/.bashrc
+    fi
+fi
+
 # Load Bash It
 source $BASH_IT/bash_it.sh

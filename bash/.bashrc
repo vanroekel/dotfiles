@@ -95,6 +95,12 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+export BASHRC_SOURCED=yes
+
 if [ -f ~/.bash_profile ]; then
-    source ~/.bash_profile
+    if [ -z ${BASH_PROFILE_SOURCED} ]; then
+        source ~/.bash_profile
+    fi
 fi
+
+#source ~/scripts/set_proxy_info.sh
