@@ -1,8 +1,6 @@
 #!/bin/bash
 BASH_IT_ADDR="git@github.com:douglasjacobsen/bash-it.git"
-JANUS_ADDR="git@github.com:carlhuda/janus.git"
 VUNDLE_ADDR="git@github.com:gmarik/vundle.git"
-DOTFILES_ADDR="git@github.com:douglasjacobsen/dot_files.git"
 
 if [ -f ~/.vim ]; then
     mkdir -p ~/VimBackups
@@ -34,12 +32,9 @@ cp bash/.bash_profile ~/.
 
 cp bash-it-custom/* ~/.bash_it/custom/.
 
-#cp vim/.vimrc.before ~/.
-#cp vim/.vimrc.after ~/.
-ln -s vim/.vimrc ~/.vimrc
+ln -s ${PWD}/vim/.vimrc ~/.vimrc
 
 cp git/.gitconfig ~/.
 
-#cp -R janus ~/.janus
-
-cp -R scripts ~/scripts
+mkdir -p ~/scripts
+cp -R scripts/* ~/scripts/.
