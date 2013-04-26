@@ -1,7 +1,8 @@
 #!/bin/bash
 BASH_IT_ADDR="git@github.com:douglasjacobsen/bash-it.git"
 JANUS_ADDR="git@github.com:carlhuda/janus.git"
-DOTFILES_ADDR="git@github.com:douglasjacobsen/dot_files.gi"
+VUNDLE_ADDR="git@github.com:gmarik/vundle.git"
+DOTFILES_ADDR="git@github.com:douglasjacobsen/dot_files.git"
 
 if [ -f ~/.vim ]; then
     mkdir -p ~/VimBackups
@@ -23,10 +24,9 @@ if [ -f ~/.bash_profile ]; then
     mv ~/.bash_profile ~/BashBackups/.
 fi
 
+git clone ${VUNDLE_ADDR} ~/.vim/bundle/vundle
 git clone ${BASH_IT_ADDR} ~/.bash_it
-git clone ${JANUS_ADDR} ~/.vim
 
-~/.vim/bootstrap.sh
 ~/.bash_it/install.sh
 
 cp bash/.bashrc ~/.
@@ -34,11 +34,12 @@ cp bash/.bash_profile ~/.
 
 cp bash-it-custom/* ~/.bash_it/custom/.
 
-cp vim/.vimrc.before ~/.
-cp vim/.vimrc.after ~/.
+#cp vim/.vimrc.before ~/.
+#cp vim/.vimrc.after ~/.
+ln -s vim/.vimrc ~/.vimrc
 
 cp git/.gitconfig ~/.
 
-cp janus ~/.janus -R
+#cp -R janus ~/.janus
 
-cp scripts ~/scripts
+cp -R scripts ~/scripts

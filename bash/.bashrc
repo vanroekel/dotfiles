@@ -103,4 +103,5 @@ if [ -f ~/.bash_profile ]; then
     fi
 fi
 
+source ~/scripts/setup_module.sh
 #source ~/scripts/set_proxy_info.sh
