@@ -33,8 +33,11 @@ cp bash/.bash_profile ~/.
 cp bash-it-custom/* ~/.bash_it/custom/.
 
 ln -s ${PWD}/vim/.vimrc ~/.vimrc
+ln -s ${PWD}/vim/.vimrc.bundles ~/.vimrc.bundles
 
 cp git/.gitconfig ~/.
 
 mkdir -p ~/scripts
 cp -R scripts/* ~/scripts/.
+
+vim -u ~/.vimrc.bundles +BundleInstall +q
