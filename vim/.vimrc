@@ -37,9 +37,10 @@ if executable('ctags')
 endif
 Bundle 'git@github.com:Shougo/neocomplcache'
 Bundle 'git@github.com:klen/python-mode'
-Bundle 'python.vim'
-Bundle 'python_match.vim'
-Bundle 'pythoncomplete'
+Bundle 'git@github.com:tpope/vim-pathogen'
+Bundle 'git@github.com:vim-scripts/python.vim.git'
+Bundle 'git@github.com:vim-scripts/python_match.vim.git'
+Bundle 'git@github.com:vim-scripts/pythoncomplete.git'
 
 
 " Setup
@@ -101,6 +102,8 @@ filetype plugin on
 	set statusline+=%b,0x%-8B\                   " current char
 	set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 " }}}
+
+execute pathogen#infect('local/{}')
 
 let fortran_free_source=1
 let mapleader=','
