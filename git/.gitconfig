@@ -19,7 +19,7 @@
 	ui = true
 [merge]
 	tool = vimdiff
-#[push]
-#	default = simple
 [github]
 	user = douglasjacobsen
+[push]
+	default = current
