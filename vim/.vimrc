@@ -128,5 +128,5 @@ inoremap <F4> <C-R>=strftime("%x")<CR>
 
 set laststatus=2
 
-nnoremap <leader>bc :BundleClean
-nnoremap <leader>bi :BundleInstall
+nnoremap <leader>bc :BundleClean<CR>
+nnoremap <leader>bi :BundleInstall<CR>
