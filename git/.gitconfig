@@ -6,19 +6,21 @@
 	autocrlf = input
 [giggle]
 	main-window-maximized = false
-	main-window-geometry = 944x754+266+83
-	main-window-view = FileView
+	main-window-geometry = 944x754+213+24
+	main-window-view = HistoryView
 	file-view-vpane-position = 392
-	history-view-vpane-position = 608
+	history-view-vpane-position = 456
 [web]
 	browser = google-chrome
 [alias]
 	logg = log --graph --oneline --abbrev-commit --decorate
 	export = !sh -c 'git archive ${1} | tar xv -C ${2}' -
+	st = status
 [color]
 	ui = true
 [merge]
 	tool = vimdiff
+	summary = true
 [github]
 	user = douglasjacobsen
 [push]

@@ -37,6 +37,8 @@ ln -s ${PWD}/vim/.vimrc.bundles ~/.vimrc.bundles
 
 cp git/.gitconfig ~/.
 
+git config --global core.excludesfile = "${PWD}/git/core_excludes"
+
 mkdir -p ~/scripts
 cp -R scripts/* ~/scripts/.
 
