@@ -42,3 +42,8 @@ Bundle 'git@github.com:vim-scripts/python.vim.git'
 Bundle 'git@github.com:vim-scripts/python_match.vim.git'
 Bundle 'git@github.com:vim-scripts/pythoncomplete.git'
 
+Bundle 'git@github.com:vim-scripts/taglist.vim.git'
+
+Bundle 'git@github.com:douglasjacobsen/vim-bufexplorer.git'
+
+Bundle 'git@github.com:mattn/webapi-vim'
