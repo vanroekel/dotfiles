@@ -3,7 +3,7 @@
 	email = jacobsen.douglas@gmail.com
 [core]
 	editor = vim
-	autocrlf = input
+	excludesfile = /home/douglasj/.git/core_excludes
 [giggle]
 	main-window-maximized = false
 	main-window-geometry = 944x754+213+24
@@ -25,3 +25,5 @@
 	user = douglasjacobsen
 [push]
 	default = current
+[http]
+	proxy = 
