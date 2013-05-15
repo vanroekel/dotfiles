@@ -27,3 +27,7 @@ alias sshmus='ssh wtrw -t ssh mu-fe1'
 alias sshmol='ssh wtrw -t ssh ml-fe1'
 alias sshgpfs='ssh wtrw -t ssh gpfst7-fe'
 
+#########################################################################################
+#					Set Aliases for Job Queues	    									#
+#########################################################################################
+alias msub_myq='showq -u `whoami`'
