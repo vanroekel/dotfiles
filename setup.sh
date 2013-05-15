@@ -30,12 +30,16 @@ git clone ${BASH_IT_ADDR} ~/.bash_it
 cp bash/.bashrc ~/.
 cp bash/.bash_profile ~/.
 
-cp bash-it-custom/* ~/.bash_it/custom/.
+CUSTOM_FILES=`ls bash-it-custom/`
+for FILE in ${CUSTOM_FILES}
+do
+	ln -s ${PWD}/bash-it-custom/${FILE} ~/.bash_it/custom/.
+done
 
 ln -s ${PWD}/vim/.vimrc ~/.vimrc
 ln -s ${PWD}/vim/.vimrc.bundles ~/.vimrc.bundles
 
-cp git/.gitconfig ~/.
+ln -s ${PWD}/git/.gitconfig ~/.
 
 git config --global core.excludesfile = "${PWD}/git/core_excludes"
 
