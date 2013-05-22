@@ -56,6 +56,8 @@ if [ -f ~/.bashrc ]; then
         source ~/.bashrc
     fi
 fi
+# Set LANG to en_US.utf8
+export LANG=en_US.UTF-8
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
