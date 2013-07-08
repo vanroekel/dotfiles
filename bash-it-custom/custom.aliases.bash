@@ -20,11 +20,11 @@ fi
 #########################################################################################
 #					Set Aliases for LANL Computers										#
 #########################################################################################
-alias sshlob='ssh wtrw -t ssh lo-fe1'
-alias sshcon='ssh wtrw -t ssh cj-fe1'
-alias sshmap='ssh wtrw -t ssh mp-fe1'
-alias sshmus='ssh wtrw -t ssh mu-fe1'
-alias sshmol='ssh wtrw -t ssh ml-fe1'
+alias sshlob='ssh wtrw -t ssh lo-fe'
+alias sshcon='ssh wtrw -t ssh cj-fe'
+alias sshmap='ssh wtrw -t ssh mp-fe'
+alias sshmus='ssh wtrw -t ssh mu-fe'
+alias sshmol='ssh wtrw -t ssh ml-fe'
 alias sshgpfs='ssh wtrw -t ssh gpfst7-fe'
 
 #########################################################################################
