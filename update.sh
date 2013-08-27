@@ -10,7 +10,7 @@ do
 done
 
 cp ${PWD}/git/.gitconfig ~/.
-git config --global core.excludesfile = "${PWD}/git/core_excludes"
+git config --global core.excludesfile "${PWD}/git/core_excludes"
 
 mkdir -p ~/scripts
 cp -R scripts/* ~/scripts/.
