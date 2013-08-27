@@ -15,6 +15,7 @@
 	logg = log --graph --oneline --abbrev-commit --decorate
 	export = !sh -c 'git archive ${1} | tar xv -C ${2}' -
 	st = status
+    up = fetch --all -p
 [color]
 	ui = true
 [merge]
