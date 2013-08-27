@@ -33,7 +33,7 @@ cp bash/.bash_profile ~/.
 CUSTOM_FILES=`ls bash-it-custom/`
 for FILE in ${CUSTOM_FILES}
 do
-	ln -s ${PWD}/bash-it-custom/${FILE} ~/.bash_it/custom/.
+	ln -sf ${PWD}/bash-it-custom/${FILE} ~/.bash_it/custom/.
 done
 
 ln -s ${PWD}/vim/.vimrc ~/.vimrc
