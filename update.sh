@@ -9,6 +9,9 @@ do
 	ln -s ${PWD}/bash-it-custom/${FILE} ~/.bash_it/custom/.
 done
 
+cp ${PWD}/git/.gitconfig ~/.
+git config --global core.excludesfile = "${PWD}/git/core_excludes"
+
 mkdir -p ~/scripts
 cp -R scripts/* ~/scripts/.
 

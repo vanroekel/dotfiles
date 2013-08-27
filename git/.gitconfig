@@ -3,7 +3,6 @@
 	email = jacobsen.douglas@gmail.com
 [core]
 	editor = vim
-	excludesfile = /home/douglasj/.git/core_excludes
 [giggle]
 	main-window-maximized = false
 	main-window-geometry = 944x754+213+24
