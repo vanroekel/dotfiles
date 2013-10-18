@@ -3,7 +3,7 @@
 #########################################################################################
 alias adb-start="adb kill-server && sudo /home/douglasj/AndroidSDK/adt-bundle-linux-x86_64-20130219/sdk/platform-tools/adb start-server"
 alias tunhome="ssh -4fgN -D 23000 home"
-alias tunhome_ip="ssh -4fgN -D 23000 68.35.11.65"
+alias tunhome_ip="ssh -4fgN -D 23000 174.56.101.93"
 alias gnuplot="rlwrap -a -c gnuplot"
 alias mountiso="sudo mount -o loop -t iso9660"
 alias ssh='ssh -X'

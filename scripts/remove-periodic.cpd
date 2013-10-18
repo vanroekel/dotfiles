@@ -1,0 +1,92 @@
+<CustomFilterDefinitions>
+  <CustomProxyDefinition name="Remove Periodic Sides" group="filters">
+    <CompoundSourceProxy id="5150" servers="1">
+      <Proxy group="filters" type="ProgrammableFilter" id="4476" servers="1" compound_name="ProgrammableFilter1">
+        <Property name="CopyArrays" id="4476.CopyArrays" number_of_elements="1">
+          <Element index="0" value="0"/>
+          <Domain name="bool" id="4476.CopyArrays.bool"/>
+        </Property>
+        <Property name="InformationScript" id="4476.InformationScript" number_of_elements="1">
+          <Element index="0" value=""/>
+        </Property>
+        <Property name="Input" id="4476.Input" number_of_elements="1">
+          <Domain name="groups" id="4476.Input.groups"/>
+          <Domain name="input_type" id="4476.Input.input_type"/>
+        </Property>
+        <Property name="OutputDataSetType" id="4476.OutputDataSetType" number_of_elements="1">
+          <Element index="0" value="8"/>
+          <Domain name="enum" id="4476.OutputDataSetType.enum">
+            <Entry value="8" text="Same as Input"/>
+            <Entry value="0" text="vtkPolyData"/>
+            <Entry value="2" text="vtkStructuredGrid"/>
+            <Entry value="3" text="vtkRectilinearGrid"/>
+            <Entry value="4" text="vtkUnstructuredGrid"/>
+            <Entry value="6" text="vtkImageData"/>
+            <Entry value="10" text="vtkUniformGrid"/>
+            <Entry value="13" text="vtkMultiblockDataSet"/>
+            <Entry value="15" text="vtkHierarchicalBoxDataSet"/>
+            <Entry value="19" text="vtkTable"/>
+          </Domain>
+        </Property>
+        <Property name="PythonPath" id="4476.PythonPath" number_of_elements="1">
+          <Element index="0" value=""/>
+        </Property>
+        <Property name="Script" id="4476.Script" number_of_elements="1">
+          <Element index="0" value="ncells = inputs[0].GetNumberOfCells()&#xa;&#xa;ids = vtk.vtkIdList()&#xa;pts = inputs[0].GetPoints()&#xa;minx = min(pts[1:,0].flatten())&#xa;maxx = max(pts[1:,0].flatten())&#xa;&#xa;ids2 = zeros(3, dtype=numpy.int64)&#xa;mask = zeros(inputs[0].GetNumberOfCells(), dtype=numpy.int8)&#xa;for i in xrange(ncells):&#xa;    inputs[0].GetCellPoints(i, ids)&#xa;    for j in range(3):&#xa;        ids2[j] = ids.GetId(j)&#xa;    xs = pts[ids2, 0]&#xa;    lminx = min(xs.flatten())&#xa;    lmaxx = max(xs.flatten())&#xa;    #    print xs,lminx, lmaxx&#xa;    if lminx &#x3e; 0.9*minx and lminx &#x3c; 1.1*minx and lmaxx &#x3e; 0.9*maxx and lmaxx &#x3c; 1.1*maxx:&#xa;        mask[i] = 0&#xa;    else:&#xa;        mask[i] = 1&#xa;&#xa;output.CellData.append(mask, &#x22;mask&#x22;)&#xa;output.PointData.PassData(inputs[0].PointData.VTKObject)&#xa;"/>
+        </Property>
+        <Property name="UpdateExtentScript" id="4476.UpdateExtentScript" number_of_elements="1">
+          <Element index="0" value=""/>
+        </Property>
+      </Proxy>
+      <Proxy group="filters" type="Threshold" id="4789" servers="1" compound_name="Threshold1">
+        <Property name="AllScalars" id="4789.AllScalars" number_of_elements="1">
+          <Element index="0" value="1"/>
+          <Domain name="bool" id="4789.AllScalars.bool"/>
+        </Property>
+        <Property name="Input" id="4789.Input" number_of_elements="1">
+          <Proxy value="4476" output_port="0"/>
+          <Domain name="groups" id="4789.Input.groups"/>
+          <Domain name="input_array" id="4789.Input.input_array">
+            <InputArray attribute_type="any" number_of_components="1"/>
+          </Domain>
+          <Domain name="input_type" id="4789.Input.input_type"/>
+        </Property>
+        <Property name="SelectInputScalars" id="4789.SelectInputScalars" number_of_elements="5">
+          <Element index="0" value=""/>
+          <Element index="1" value=""/>
+          <Element index="2" value=""/>
+          <Element index="3" value="1"/>
+          <Element index="4" value="mask"/>
+          <Domain name="array_list" id="4789.SelectInputScalars.array_list">
+            <String text="density"/>
+            <String text="layerThickness"/>
+            <String text="salinity"/>
+            <String text="seaSurfacePressure"/>
+            <String text="temperature"/>
+            <String text="mask"/>
+          </Domain>
+          <Domain name="field_list" id="4789.SelectInputScalars.field_list">
+            <Entry value="0" text="Point Data"/>
+            <Entry value="1" text="Cell Data"/>
+          </Domain>
+        </Property>
+        <Property name="ThresholdBetween" id="4789.ThresholdBetween" number_of_elements="2">
+          <Element index="0" value="0.05"/>
+          <Element index="1" value="1"/>
+          <Domain name="range" id="4789.ThresholdBetween.range"/>
+        </Property>
+        <Property name="UseContinuousCellRange" id="4789.UseContinuousCellRange" number_of_elements="1">
+          <Element index="0" value="0"/>
+          <Domain name="bool" id="4789.UseContinuousCellRange.bool"/>
+        </Property>
+      </Proxy>
+      <ExposedProperties>
+        <Property name="Input" proxy_name="ProgrammableFilter1" exposed_name="Input"/>
+      </ExposedProperties>
+      <OutputPort name="Output" proxy="Threshold1" port_index="0"/>
+      <Hints>
+        <ShowInMenu/>
+      </Hints>
+    </CompoundSourceProxy>
+  </CustomProxyDefinition>
+</CustomFilterDefinitions>
