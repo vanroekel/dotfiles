@@ -73,10 +73,11 @@ set number
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4 
-set expandtab
 set modeline
 set modelines=5
 set foldmethod=marker
+set hlsearch
+set ignorecase
 
 set wildmode=longest:full
 set wildmenu

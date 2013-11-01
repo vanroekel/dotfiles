@@ -12,12 +12,12 @@ Bundle 'git@github.com:MarcWeber/vim-addon-mw-utils'
 Bundle 'git@github.com:tomtom/tlib_vim'
 if executable('ack-grep')
 	let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-		Bundle 'git@github.com:mileszs/ack.vim'
-	elseif executable('ack')
-		Bundle 'git@github.com:mileszs/ack.vim'
-	elseif executable('ag')
-		Bundle 'git@github.com:mileszs/ack.vim'
-		let g:ackprg = 'ag --nogroup --nocolor --column'
+	Bundle 'git@github.com:mileszs/ack.vim'
+elseif executable('ack')
+	Bundle 'git@github.com:mileszs/ack.vim'
+elseif executable('ag')
+	Bundle 'git@github.com:mileszs/ack.vim'
+	let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
 
 Bundle 'git@github.com:scrooloose/nerdtree'
@@ -36,11 +36,11 @@ if executable('ctags')
     Bundle 'git@github.com:majutsushi/tagbar'
 endif
 Bundle 'git@github.com:Shougo/neocomplcache'
-Bundle 'git@github.com:klen/python-mode'
 Bundle 'git@github.com:tpope/vim-pathogen'
-Bundle 'git@github.com:vim-scripts/python.vim.git'
-Bundle 'git@github.com:vim-scripts/python_match.vim.git'
-Bundle 'git@github.com:vim-scripts/pythoncomplete.git'
+"Bundle 'git@github.com:klen/python-mode'
+"Bundle 'git@github.com:vim-scripts/python.vim.git'
+"Bundle 'git@github.com:vim-scripts/python_match.vim.git'
+"Bundle 'git@github.com:vim-scripts/pythoncomplete.git'
 
 Bundle 'git@github.com:vim-scripts/taglist.vim.git'
 

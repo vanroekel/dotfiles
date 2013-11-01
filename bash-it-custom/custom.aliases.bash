@@ -33,3 +33,5 @@ alias sshgpfs='ssh wtrw -t ssh gpfst7-fe'
 alias msub_myq='showq -u `whoami`'
 
 alias git_lettuce='git clone git@github.com:douglasjacobsen/mpas-lettuce-tasks.git features'
+
+alias reset_unity='stop unity-panel-service; start unity-panel-service'
