@@ -1,0 +1,6 @@
+#!/bin/sh
+
+OLD_BR=`git branch | grep "*" | sed "s/\*//g" | sed "s/ //g"`
+
+git checkout develop
+git branch -D ${OLD_BR}

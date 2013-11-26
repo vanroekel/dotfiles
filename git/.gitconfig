@@ -20,6 +20,7 @@
     up = fetch --all -p
 	co = checkout
 	rc = rebase --continue
+	path-br = "!bash -xc \"git checkout -b \"${PWD#${PWD%/*/*}/}\" MPAS-Dev/MPAS/develop\""
 [color]
 	ui = true
 [merge]
