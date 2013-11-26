@@ -3,6 +3,8 @@
 	email = jacobsen.douglas@gmail.com
 [core]
 	editor = vim
+	autocrlf = input
+	whitespace = trailing-space
 [giggle]
 	main-window-maximized = false
 	main-window-geometry = 944x754+213+24
@@ -16,6 +18,9 @@
 	export = !sh -c 'git archive ${1} | tar xv -C ${2}' -
 	st = status
     up = fetch --all -p
+	co = checkout
+	rc = rebase --continue
+	path-br = checkout -b ocean/svn_removal MPAS-Dev/MPAS/develop
 [color]
 	ui = true
 [merge]
