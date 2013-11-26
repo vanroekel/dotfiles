@@ -20,7 +20,6 @@
     up = fetch --all -p
 	co = checkout
 	rc = rebase --continue
-	path-br = checkout -b ocean/svn_removal MPAS-Dev/MPAS/develop
 [color]
 	ui = true
 [merge]
