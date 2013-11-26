@@ -1,7 +1,7 @@
 #########################################################################################
 #						Set Aliases for Ease of Use										#
 #########################################################################################
-alias adb-start="adb kill-server && sudo /home/douglasj/AndroidSDK/adt-bundle-linux-x86_64-20130219/sdk/platform-tools/adb start-server"
+alias adb-start="adb kill-server && sudo /home/douglasj/AndroidSDK/adt-bundle-linux-x86_64-20130917/sdk/platform-tools/adb start-server"
 alias tunhome="ssh -4fgN -D 23000 home"
 alias tunhome_ip="ssh -4fgN -D 23000 174.56.101.93"
 alias gnuplot="rlwrap -a -c gnuplot"
@@ -30,8 +30,8 @@ alias sshgpfs='ssh wtrw -t ssh gpfst7-fe'
 #########################################################################################
 #					Set Aliases for Job Queues	    									#
 #########################################################################################
-alias msub_myq='showq -u `whoami`'
+alias myq_msub='showq -u `whoami`'
 
-alias git_lettuce='git clone git@github.com:douglasjacobsen/mpas-lettuce-tasks.git features'
+alias git_lettuce='git clone git@github.com:douglasjacobsen/mpas-lettuce testing_mpas; cd testing_mpas; git submodule update --init --remote; cd features/ocean; git checkout master; cd ../../../'
 
 alias reset_unity='stop unity-panel-service; start unity-panel-service'
