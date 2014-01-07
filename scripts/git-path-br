@@ -1,0 +1,2 @@
+#!/bin/sh
+git checkout -b `expr "${PWD}" : ".*/\([a-zA-Z0-9_]*/[a-zA-z0-9_]*\)"` MPAS-Dev/MPAS/develop

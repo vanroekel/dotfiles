@@ -24,5 +24,10 @@ elif [ "${HOST_CHECK}" == "ml" ]; then
     module load python-epd/7.3.2 cmake/2.8.8 
 elif [ "${HOST_CHECK}" == "hopper" ]; then
     module load git
+else # Ubuntu?
+    # Setup for MPAS
+    export NETCDF=/usr
+    export PNETCDF=/usr
+    export PIO=/usr
 fi
 
