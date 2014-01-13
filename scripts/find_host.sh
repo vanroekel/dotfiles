@@ -7,6 +7,7 @@ if [ "${HOST_CHECK}" == "mu" ]; then
     source ${SCRIPT_DIR}/add_modules.sh
     module load friendly-testing
     module load python-epd/7.3.2 cmake/2.8.8
+	module load libevent tmux
 elif [ "${HOST_CHECK}" == "lo" ]; then
     export SCRIPT_DIR=/usr/projects/climate/SHARED_CLIMATE/scripts
     source ${SCRIPT_DIR}/add_modules.sh
