@@ -38,6 +38,7 @@ done
 
 ln -s ${PWD}/vim/.vimrc ~/.vimrc
 ln -s ${PWD}/vim/.vimrc.bundles ~/.vimrc.bundles
+ln -s ${PWD}/tmux/.tmux.conf ~/.tmux.conf
 
 cp ${PWD}/git/.gitconfig ~/.
 git config --global core.excludesfile "${PWD}/git/core_excludes"
