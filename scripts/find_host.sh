@@ -23,6 +23,10 @@ elif [ "${HOST_CHECK}" == "ml" ]; then
     source ${SCRIPT_DIR}/add_modules.sh
     module load friendly-testing
     module load python-epd/7.3.2 cmake/2.8.8 
+elif [ "${HOST_CHECK}" == "yslogin" ]; then
+	export LIBEVENT=/glade/u/home/douglasj/libevent/2.1.3
+	export LD_LIBRARY_PATH="${LIBEVENT}/lib:${LD_LIBRARY_PATH}"
+	export PATH="${TMUX}/bin:${PATH}"
 elif [ "${HOST_CHECK}" == "hopper" ]; then
     module load git
 else # Ubuntu?
