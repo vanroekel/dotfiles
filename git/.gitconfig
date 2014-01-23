@@ -1,6 +1,6 @@
 [user]
-	name = Douglas Jacobsen
-	email = jacobsen.douglas@gmail.com
+	name = Phillip Wolfram
+	email = pwolfram@lanl.gov
 [core]
 	editor = vim
 	autocrlf = input
@@ -17,7 +17,7 @@
 	logg = log --graph --oneline --abbrev-commit --decorate
 	export = !sh -c 'git archive ${1} | tar xv -C ${2}' -
 	st = status
-    up = fetch --all -p
+	up = fetch --all -p
 	co = checkout
 	rc = rebase --continue
 	path-br = "!bash -xc \"git checkout -b \"${PWD#${PWD%/*/*}/}\" MPAS-Dev/MPAS/develop\""
@@ -27,7 +27,7 @@
 	tool = vimdiff
 	summary = true
 [github]
-	user = douglasjacobsen
+	user = pwolfram
 [push]
 	default = current
 [http]
