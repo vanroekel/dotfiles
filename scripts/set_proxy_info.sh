@@ -5,13 +5,14 @@ ATWORK_DOMAIN='.lanl.gov'
 WORKIP="no"
 
 alias ifconfig='/sbin/ifconfig'
+alias sgrep='/bin/grep'
 
 OS=`uname`
 IO="" # store IP
 case $OS in
-	Linux) IP=`ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'`;;
-	FreeBSD|OpenBSD) IP=`ifconfig  | grep -E 'inet.[0-9]' | grep -v '127.0.0.1' | awk '{ print $2}'` ;;
-	SunOS) IP=`ifconfig -a | grep inet | grep -v '127.0.0.1' | awk '{print $2} '` ;;
+	Linux) IP=`ifconfig  | sgrep 'inet addr:'| sgrep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'`;;
+	FreeBSD|OpenBSD) IP=`ifconfig  | sgrep -E 'inet.[0-9]' | sgrep -v '127.0.0.1' | awk '{ print $2}'` ;;
+	SunOS) IP=`ifconfig -a | sgrep inet | sgrep -v '127.0.0.1' | awk '{print $2} '` ;;
 	*) IP="Unknown";;
 esac
 
@@ -19,7 +20,7 @@ IPS=`echo $IP | tr " " "\n"`
 
 for IP in $IPS
 do
-    DOMAIN=`nslookup ${IP} | grep "${ATWORK_DOMAIN}"`
+    DOMAIN=`nslookup ${IP} | sgrep "${ATWORK_DOMAIN}"`
 
     if [ -n "${DOMAIN}" ]; then
         WORKIP="yes"
