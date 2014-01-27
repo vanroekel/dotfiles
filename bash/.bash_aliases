@@ -8,6 +8,7 @@ alias codecount="ls *.[c-h] | xargs wc "
 alias doxygencommentsready="ls *.[c-h] | xargs sed -i 's/\/\*/\/\*\*/g'"
 alias cleandoxygencommentsready="ls *.[c-h] | xargs sed -i 's/\/\*\+/\/\*\*/g'"
 alias backupmfiles="make -C ~/Papers/wolfram-11/mfiles/"
+alias vi='vim'
 
 # git aliases
 alias gco='git co'
