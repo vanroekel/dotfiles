@@ -68,7 +68,7 @@ platform='unknown'
 unamestr=`uname`
 if [[ "$unamestr" == "Darwin" ]]; then
   platform='macosx'
-elif
+else
   platform='nix'
 fi
 
