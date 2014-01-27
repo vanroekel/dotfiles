@@ -2,6 +2,7 @@
 
 cp bash/.bashrc ~/.
 cp bash/.bash_profile ~/.
+cp bash/.bash_aliases ~/.
 
 CUSTOM_FILES=`ls bash-it-custom/`
 for FILE in ${CUSTOM_FILES}
