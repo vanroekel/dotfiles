@@ -96,6 +96,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
 
 export SVN_EDITOR="/usr/bin/vim"
 
