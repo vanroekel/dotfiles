@@ -61,3 +61,50 @@ export LANG=en_US.UTF-8
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
+
+
+# for MACOSX
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == "Darwin" ]]; then
+  platform='macosx'
+elif
+  platform='nix'
+fi
+
+if [ $platform == 'macosx' ]; then
+  export CLICOLOR=1
+  export LSCOLORS=ExFxCxDxBxegedabagacad
+
+
+  ##
+  # Your previous /Users/pwolfram/.bash_profile file was backed up as /Users/pwolfram/.bash_profile.macports-saved_2014-01-07_at_16:00:10
+  ##
+
+  source `brew --repository`/Library/Contributions/brew_bash_completion.sh
+
+  export PATH=/usr/local/bin:$PATH
+  export PATH=/usr/local/sbin:$PATH
+
+
+  export PYTHONDIR=/Library/Frameworks/Python.framework/Versions/2.7/bin
+  export PYTHONPATH=$PYTHONPATH:/Library/Frameworks/Python.framework/Versions/2.7/bin
+  export PYTHONPATH=$PYTHONPATH:/Users/mohsenjadidi/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages
+  export PYTHONPATH=$PYTHONPATH:/Applications/Canopy.app/appdata/canopy-1.0.1.1189.macosx-x86_64/Canopy.app/Contents/lib/python2.7/site-packages
+
+  # Added by Canopy installer on 2014-01-10
+  # VIRTUAL_ENV_DISABLE_PROMPT can be set to '' to make bashprompt show that Canopy is active, otherwise 1
+  #VIRTUAL_ENV_DISABLE_PROMPT=1 source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate
+
+  # git completion 
+  source ~/.git-completion.bash
+  
+  #export PATH=~/Documents/MPAS:usr/texbin:$PATH
+  export PATH=usr/texbin:$PATH
+  export http_proxy=http://proxyout.lanl.gov:8080
+  export https_proxy=http://proxyout.lanl.gov:8080
+  export all_proxy=proxy.lanl.gov:8080
+  export ALL_PROXY=$http_proxy
+
+  alias xdvi='xdvik -geometry 1200x1445+1360+0 -s 5'
+fi

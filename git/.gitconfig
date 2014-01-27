@@ -17,10 +17,15 @@
 	logg = log --graph --oneline --abbrev-commit --decorate
 	export = !sh -c 'git archive ${1} | tar xv -C ${2}' -
 	st = status
+  di = difftool --tool=vimdiff --no-prompt
+  ci = commit -a
 	up = fetch --all -p
 	co = checkout
+  rb = rebase
 	rc = rebase --continue
-	path-br = "!bash -xc \"git checkout -b \"${PWD#${PWD%/*/*}/}\" MPAS-Dev/MPAS/develop\""
+  path-br = "!bash -xc \"git checkout -b \"${PWD#${PWD%/*/*}/}\" MPAS-Dev/MPAS/develop\""
+[diff]
+  tool = vimdiff
 [color]
 	ui = true
 [merge]
