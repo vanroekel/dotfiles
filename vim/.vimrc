@@ -65,7 +65,7 @@ filetype plugin on
 execute pathogen#infect('local/{}')
 
 let fortran_free_source=1
-let mapleader=','
+"let mapleader=','
 autocmd FileType fortran setlocal textwidth=0
 
 set autoindent
@@ -78,6 +78,14 @@ set modelines=5
 set foldmethod=marker
 set hlsearch
 set ignorecase
+noremap <F5> :set hlsearch! hlsearch?<CR>
+noremap <F6> :ToggleRaibowParenthesis<CR>
+noremap <F7> :syntax on<CR>
+noremap <F8> :Tlist<CR>
+noremap <F9> :source /home/pwolfram/.vim/plugin/python_fold.vim<CR>
+noremap <F4> :set number! number?<CR>
+call rainbow_parenthsis#LoadRound()
+call rainbow_parenthsis#LoadSquare()
 
 set wildmode=longest:full
 set wildmenu
@@ -89,4 +97,18 @@ inoremap <F4> <C-R>=strftime("%x")<CR>
 set laststatus=2
 
 nnoremap <leader>bc :BundleClean<CR>
-nnoremap <leader>bi :BundleInstall<CR>
+nnoremap <leader>bi :BundleInstall!<CR>
+" take care of white space for diffs
+set diffopt+=iwhite
+  set diffexpr=DiffW()
+  function DiffW()
+    let opt = ""
+     if &diffopt =~ "icase"
+       let opt = opt . "-i "
+     endif
+     if &diffopt =~ "iwhite"
+       let opt = opt . "-w " " vim uses -b by default
+     endif
+     silent execute "!diff -a --binary " . opt .
+       \ v:fname_in . " " . v:fname_new .  " > " . v:fname_out
+  endfunction

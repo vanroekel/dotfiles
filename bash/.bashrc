@@ -105,4 +105,4 @@ fi
 
 source ~/scripts/setup_module.sh
 source ~/scripts/find_host.sh
-#source ~/scripts/set_proxy_info.sh
+source ~/scripts/set_proxy_info.sh
