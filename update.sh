@@ -16,4 +16,5 @@ git config --global core.excludesfile "${PWD}/git/core_excludes"
 mkdir -p ~/scripts
 cp -R scripts/* ~/scripts/.
 
+# update bundles
 vim -u ~/.vimrc.bundles +BundleInstall +q
