@@ -50,6 +50,6 @@ Bundle 'git@github.com:mattn/webapi-vim'
 
 Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 
-Bundle 'git@github.com:vim-scripts/Rainbow-Parenthsis-Bundle.git'
+Bundle 'git@github.com:pwolfram/rainbow_parentheses.vim.git'
 
 Bundle 'git@github.com:tsaleh/vim-matchit.git'

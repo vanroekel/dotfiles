@@ -94,10 +94,7 @@ nnoremap <F3> "=strftime("%x")<CR>P
 inoremap <F3> <C-R>=strftime("%x")<CR>
 noremap <F4> :set number! number?<CR>
 noremap <F5> :set hlsearch! hlsearch?<CR>
-" source /home/pwolfram/.vim/plugin/RainbowParenthsis.vim
-"noremap <F6> :so /home/pwolfram/.vim/plugin/RainbowParenthsis.vim<CR>
-noremap <F6> :ToggleRaibowParenthesis<CR>
-":noremap <F6> :so /home/pwolfram/.vim/autoload/rainbow_parenthsis.vim<CR>
+noremap <F6> :RainbowParenthesesToggleAll<CR>
 noremap <F7> :syntax on<CR>
 noremap <F8> :Tlist<CR>
 "noremap <F9> source /home/pwolfram/.vim/plugin/python_fold.vim<CR>
@@ -159,6 +156,7 @@ set iskeyword+=:
 
 let g:sh_indent_case_labels=1
 
-" start with Rainbow parens used
-call rainbow_parenthsis#LoadRound()
-call rainbow_parenthsis#LoadSquare()
+" rainbow parens
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
