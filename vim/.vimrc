@@ -160,3 +160,7 @@ let g:sh_indent_case_labels=1
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+" spelling
+set spelllang=en
+set spellfile=~/.vimspell.en.utf-8.add
