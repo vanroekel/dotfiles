@@ -1,13 +1,11 @@
 # User specific aliases and functions
 alias rm='rm -i'
-alias ll='ls -alh'
 alias matlabline='matlab -r -nosplash -nodisplay -nojvm'
 alias lsdir="ls -l | grep '^d'"
-alias suntansconvert="hexdump -v -e '4/8 \"%15E \"' -e '\"\n\"'"
+#alias suntansconvert="hexdump -v -e '4/8 \"%15E \"' -e '\"\n\"'"
 alias codecount="ls *.[c-h] | xargs wc "
 alias doxygencommentsready="ls *.[c-h] | xargs sed -i 's/\/\*/\/\*\*/g'"
 alias cleandoxygencommentsready="ls *.[c-h] | xargs sed -i 's/\/\*\+/\/\*\*/g'"
-alias backupmfiles="make -C ~/Papers/wolfram-11/mfiles/"
 alias vi='vim'
 
 # git aliases
@@ -29,7 +27,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
 

@@ -5,14 +5,13 @@ ATWORK_DOMAIN='.lanl.gov'
 WORKIP="no"
 
 alias ifconfig='/sbin/ifconfig'
-alias sgrep='/bin/grep'
 
 OS=`uname`
 IO="" # store IP
 case $OS in
-	Linux) IP=`ifconfig  | sgrep 'inet addr:'| sgrep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'`;;
-	FreeBSD|OpenBSD) IP=`ifconfig  | sgrep -E 'inet.[0-9]' | sgrep -v '127.0.0.1' | awk '{ print $2}'` ;;
-	SunOS) IP=`ifconfig -a | sgrep inet | sgrep -v '127.0.0.1' | awk '{print $2} '` ;;
+	Linux) IP=`ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'`;;
+	FreeBSD|OpenBSD) IP=`ifconfig  | grep -E 'inet.[0-9]' | grep -v '127.0.0.1' | awk '{ print $2}'` ;;
+	SunOS) IP=`ifconfig -a | grep inet | grep -v '127.0.0.1' | awk '{print $2} '` ;;
 	*) IP="Unknown";;
 esac
 
@@ -20,7 +19,7 @@ IPS=`echo $IP | tr " " "\n"`
 
 for IP in $IPS
 do
-    DOMAIN=`nslookup ${IP} | sgrep "${ATWORK_DOMAIN}"`
+    DOMAIN=`nslookup ${IP} | grep "${ATWORK_DOMAIN}"`
 
     if [ -n "${DOMAIN}" ]; then
         WORKIP="yes"
@@ -35,10 +34,10 @@ case $WORKIP in
  		#cp ~/.subversion/servers.lanl ~/.subversion/servers
  		#cp /etc/apt/apt.conf.lanl /etc/apt/apt.conf
  		git config --global http.proxy $http_proxy
-		gconftool-2 -t string -s /system/proxy/mode "manual"
-		gconftool-2 -t string -s /system/http_proxy/host "127.0.0.1"
-		gconftool-2 -t int -s /system/http_proxy/port 23000
-		gconftool-2 -t bool -s /system/http_proxy/use_http_proxy true
+		#gconftool-2 -t string -s /system/proxy/mode "manual"
+		#gconftool-2 -t string -s /system/http_proxy/host "127.0.0.1"
+		#gconftool-2 -t int -s /system/http_proxy/port 23000
+		#gconftool-2 -t bool -s /system/http_proxy/use_http_proxy true
 		#cp ~/.purple/prefs.xml.lanl ~/.purple/prefs.xml
  		;;
  	*) unset http_proxy
@@ -49,8 +48,8 @@ case $WORKIP in
 		#cp ~/.subversion/servers.nolanl ~/.subversion/servers
  		#cp /etc/apt/apt.conf.nolanl /etc/apt/apt.conf
  		git config --global http.proxy ""
-		gconftool-2 -t string -s /system/proxy/mode "none"
-		gconftool-2 -t bool -s /system/http_proxy/use_http_proxy false
+		#gconftool-2 -t string -s /system/proxy/mode "none"
+		#gconftool-2 -t bool -s /system/http_proxy/use_http_proxy false
 		#cp ~/.purple/prefs.xml.nolanl ~/.purple/prefs.xml
  		;;
 esac
