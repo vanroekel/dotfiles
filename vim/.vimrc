@@ -163,4 +163,4 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " spelling
 set spelllang=en
-set spellfile=~/.vimspell.en.utf-8.add
+"set spellfile=~/.vimspell.en.utf-8.add
