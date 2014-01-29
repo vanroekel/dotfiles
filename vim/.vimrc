@@ -156,11 +156,20 @@ set iskeyword+=:
 
 let g:sh_indent_case_labels=1
 
-" rainbow parens
+" rainbow parens {{{
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-
-" spelling
+"}}}
+"
+" spelling {{{
 set spelllang=en
 set spellfile=~/.vim/bundle/vundle/spell/en.utf-8.add
+"}}}
+
+"tabs {{{
+nnoremap <silent> <leader>tn :tabn<CR>
+nnoremap <silent> <leader>tp :tabp<CR>
+nnoremap <silent> <leader>tl :tablast<CR>
+nnoremap <silent> <leader>tf :tabfirst<CR>
+"}}}
