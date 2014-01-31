@@ -1,3 +1,4 @@
+apple-gcc42
 autoconf
 automake
 byobu
@@ -9,16 +10,22 @@ ctags
 freetype
 gettext
 gfortran
+ghostscript
 gmp
 gnu-sed
 grc
+gv
 hdf5
 htop-osx
 isl
+jbig2dec
+jpeg
 libevent
 libmpc
 libpng
+libtiff
 libtool
+little-cms2
 macvim
 metis
 mpfr
@@ -26,6 +33,7 @@ netcdf
 newt
 pkg-config
 popt
+readline
 s-lang
 szip
 tmux

@@ -71,7 +71,7 @@ autocmd FileType fortran setlocal textwidth=0
 
 set autoindent
 set cindent
-set number
+"set number
 "set tabstop=4
 "set shiftwidth=4
 "set softtabstop=4 
@@ -117,7 +117,7 @@ set laststatus=2
 
 nnoremap <leader>bc :BundleClean<CR>
 nnoremap <leader>bi :BundleInstall!<CR>
-" take care of white space for diffs
+" take care of white space for diffs {{{ 
 set diffopt+=iwhite
   set diffexpr=DiffW()
   function DiffW()
@@ -131,6 +131,7 @@ set diffopt+=iwhite
      silent execute "!diff -a --binary " . opt .
        \ v:fname_in . " " . v:fname_new .  " > " . v:fname_out
   endfunction
+  "}}}
 syntax on
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse Latex-Suite. Set your grep
@@ -155,6 +156,12 @@ set sw=2
 set iskeyword+=:
 
 let g:sh_indent_case_labels=1
+
+" namelist file filter {{{
+" associate *.foo with php filetype
+au BufRead,BufNewFile *namelist*.input* setfiletype fortran
+"au BufRead,BufNewFile *inc set filetype=fortran
+" }}}
 
 " rainbow parens {{{
 au Syntax * RainbowParenthesesLoadRound
