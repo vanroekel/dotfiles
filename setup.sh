@@ -54,3 +54,8 @@ mkdir -p ~/scripts
 cp -R scripts/* ~/scripts/.
 
 vim -u ~/.vimrc.bundles +BundleInstall +q
+
+###### MAC OSX Specifics ####################
+# install osx-trash if on macosx
+sudo gem install osx-trash
+brew install ack
