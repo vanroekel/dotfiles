@@ -53,3 +53,7 @@ Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 Bundle 'git@github.com:pwolfram/rainbow_parentheses.vim.git'
 
 Bundle 'git@github.com:tsaleh/vim-matchit.git'
+
+Bundle 'git@github.com:sukima/xmledit.git'
+
+Bundle 'git@github.com:pwolfram/fortran.vim.git'
