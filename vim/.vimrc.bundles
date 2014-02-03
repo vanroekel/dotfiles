@@ -50,7 +50,8 @@ Bundle 'git@github.com:douglasjacobsen/vim-bufexplorer.git'
 
 Bundle 'git@github.com:mattn/webapi-vim'
 
-Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+"Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+Bundle 'git@github.com:pwolfram/vim-latex.git'
 
 Bundle 'git@github.com:pwolfram/rainbow_parentheses.vim.git'
 
