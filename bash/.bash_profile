@@ -101,7 +101,7 @@ if [ $platform == 'macosx' ]; then
 
   export PYTHONDIR=/Library/Frameworks/Python.framework/Versions/2.7/bin
   export PYTHONPATH=$PYTHONPATH:/Library/Frameworks/Python.framework/Versions/2.7/bin
-  export PYTHONPATH=$PYTHONPATH:/Users/pwolfram/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages
+  #export PYTHONPATH=$PYTHONPATH:/Users/pwolfram/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages
   export PYTHONPATH=$PYTHONPATH:/Applications/Canopy.app/appdata/canopy-1.0.1.1189.macosx-x86_64/Canopy.app/Contents/lib/python2.7/site-packages
 
   # Added by Canopy installer on 2014-01-10

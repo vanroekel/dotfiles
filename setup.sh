@@ -45,6 +45,7 @@ ln -s ${PWD}/vim/.vimspell.en.utf-8.add ~/.vim/bundle/vundle/spell/en.utf-8.add
 ln -s ${PWD}/vim/.gvimrc ~/.gvimrc
 ln -s ${PWD}/vim/.vimrc.bundles ~/.vimrc.bundles
 ln -s ${PWD}/tmux/.tmux.conf ~/.tmux.conf
+ln -s ${PWD}/screen/.screenrc ~/.screenrc
 
 cp ${PWD}/git/.gitconfig ~/.
 cp ${PWD}/git/.git-completion.bash ~/.
