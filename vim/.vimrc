@@ -180,3 +180,9 @@ nnoremap <silent> <leader>tp :tabp<CR>
 nnoremap <silent> <leader>tl :tablast<CR>
 nnoremap <silent> <leader>tf :tabfirst<CR>
 "}}}
+"
+"xml syntax folding {{{
+let g:xml_syntax_folding=1
+au FileType xml setlocal foldmethod=syntax
+au FileType xsd setlocal foldmethod=syntax
+"}}}

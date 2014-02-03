@@ -1,0 +1,20 @@
+vbell off
+term xterm-256color
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+bind s
+screen -t code
+screen -t bash
+split
+select 0
+focus down 
+resize 7 
+select 1
+fit
+focus up
+#bindkey "^[Od" prev  # change window with ctrl-left
+#bindkey "^[Oc" next  # change window with ctrl-right
+#bindkey -k k9 screen # bind F9  to create a new screen
+#bindkey -k k1 next  # change window with F1
+#bindkey -k k2 prev  # change window with F2
+
