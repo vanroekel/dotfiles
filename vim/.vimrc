@@ -85,6 +85,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2 
 set expandtab
+set backspace+=indent,eol,start
 filetype indent on
 " automatically save and load folds
 au BufWinLeave * silent! mkview
@@ -139,7 +140,7 @@ syntax on
 set grepprg=grep\ -nH\ $*
 
 " OPTIONAL: This enables automatic indentation as you type.
-" filetype indent on
+ filetype indent on
 
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
@@ -185,4 +186,16 @@ nnoremap <silent> <leader>tf :tabfirst<CR>
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
 au FileType xsd setlocal foldmethod=syntax
+"}}}
+"
+"colorscheme http://vimcolorschemetest.googlecode.com/svn/html/index-html.html{{{
+"syntax enable 
+let g:molokai_original=1
+let g:rehash256=1
+set background=dark
+colorscheme molokai
+"let g:solarized_termcolors=256
+"set background=dark
+"colorscheme solarized
+"colorscheme slate
 "}}}

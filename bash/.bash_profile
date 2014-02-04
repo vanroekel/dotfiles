@@ -122,4 +122,7 @@ if [ $platform == 'macosx' ]; then
 
   #generalized colors
   source "`brew --prefix grc`/etc/grc.bashrc"
+
+  # make sure MacOSX inherits correct variables for launcher
+  #launchtcl setenv PATH $PATH
 fi
