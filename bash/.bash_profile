@@ -95,8 +95,7 @@ if [ $platform == 'macosx' ]; then
 
   source `brew --repository`/Library/Contributions/brew_bash_completion.sh
 
-  export PATH=/usr/local/bin:$PATH
-  export PATH=/usr/local/sbin:$PATH
+  export PATH=/Users/pwolfram/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 
   export PYTHONDIR=/Library/Frameworks/Python.framework/Versions/2.7/bin
