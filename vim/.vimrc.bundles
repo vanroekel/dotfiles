@@ -63,3 +63,7 @@ Bundle 'git@github.com:pwolfram/fortran.vim.git'
 
 " makes Ack command available in vim, must brew install ack though...
 Bundle 'git@github.com:mileszs/ack.vim.git'
+
+Bundle 'git://github.com/altercation/vim-colors-solarized.git'
+Bundle 'git@github.com:flazz/vim-colorschemes.git'
+Bundle 'git@github.com:tomasr/molokai.git'

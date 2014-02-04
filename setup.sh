@@ -27,9 +27,9 @@ git clone ${BASH_IT_ADDR} ~/.bash_it
 
 ~/.bash_it/install.sh
 
-cp bash/.bashrc ~/.
-cp bash/.bash_profile ~/.
-cp bash/.bash_aliases ~/.
+ln -s ${PWD}/bash/.bashrc ~/.bashrc
+ln -s ${PWD}/bash/.bash_profile ~/.bash_profile
+ln -s ${PWD}/bash/.bash_aliases ~/.bash_aliases
 
 CUSTOM_FILES=`ls bash-it-custom/`
 for FILE in ${CUSTOM_FILES}
