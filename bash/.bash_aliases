@@ -7,7 +7,6 @@ alias codecount="ls *.[c-h] | xargs wc "
 alias doxygencommentsready="ls *.[c-h] | xargs sed -i 's/\/\*/\/\*\*/g'"
 alias cleandoxygencommentsready="ls *.[c-h] | xargs sed -i 's/\/\*\+/\/\*\*/g'"
 alias vi='vim'
-alias ncview='/Users/pwolfram/bin/ncview'
 
 # git aliases
 alias gco='git co'
