@@ -1,10 +1,11 @@
-"vim: foldmethod=marker
 "set term=xterm-color
- 
- source ~/.vimrc.bundles
 
-" Setup
+" Setup {{{
+source ~/.vimrc.bundles
 filetype plugin on
+syntax on
+execute pathogen#infect('local/{}')
+"}}}
 
 " Fugitive {{{
 	nnoremap <silent> <leader>gs :Gstatus<CR>
@@ -63,34 +64,36 @@ filetype plugin on
 	set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 " }}}
 
-execute pathogen#infect('local/{}')
 
-let fortran_free_source=1
 "let mapleader=','
-autocmd FileType fortran setlocal textwidth=0
 
+" indents, tabs, backspace {{{
 set autoindent
-set cindent
+"set cindent
+"set smartindent
 "set number
 "set tabstop=4
 "set shiftwidth=4
 "set softtabstop=4 
 set modeline
 set modelines=5
-set foldmethod=marker
 set hlsearch
 set ignorecase
-set smartindent
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2 
 set expandtab
 set backspace+=indent,eol,start
-filetype indent on
-" automatically save and load folds
+"}}}}
+
+" automatically save and load folds {{{
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
-" Press F5 to toggle highlighting on/off, and show current value.
+set foldmethod=marker
+" }}} 
+
+" function key mappings {{{
+"set pastetoggle=<F3>
 nnoremap <F3> "=strftime("%x")<CR>P
 inoremap <F3> <C-R>=strftime("%x")<CR>
 noremap <F4> :set number! number?<CR>
@@ -100,24 +103,20 @@ noremap <F7> :syntax on<CR>
 noremap <F8> :Tlist<CR>
 "noremap <F9> source /home/pwolfram/.vim/plugin/python_fold.vim<CR>
 "syntax on
+"}}}
 
-" latex 
-" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-" filetype plugin on
-
-" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
-" can be called correctly.
-set shellslash
-
+" {{{ command completion (always leave command line on)
+set laststatus=2
 set wildmode=longest:full
 set wildmenu
-set pastetoggle=<F3>
+" }}}
 
 
-set laststatus=2
-
+" Bundle {{{
 nnoremap <leader>bc :BundleClean<CR>
 nnoremap <leader>bi :BundleInstall!<CR>
+"}}}
+
 " take care of white space for diffs {{{ 
 set diffopt+=iwhite
   set diffexpr=DiffW()
@@ -133,14 +132,23 @@ set diffopt+=iwhite
        \ v:fname_in . " " . v:fname_new .  " > " . v:fname_out
   endfunction
   "}}}
-syntax on
+  
+" vim-latex {{{
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse Latex-Suite. Set your grep
 " program to always generate a file-name.
 set grepprg=grep\ -nH\ $*
 
+" latex 
+" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+" filetype plugin on
+
+" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+" can be called correctly.
+set shellslash
+
 " OPTIONAL: This enables automatic indentation as you type.
- filetype indent on
+filetype indent on
 
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
@@ -155,12 +163,18 @@ set sw=2
 " type in \ref{fig: and press <C-n> you will automatically cycle through
 " all the figure labels. Very useful!
 set iskeyword+=:
+"}}}
 
+" shell setup {{{
 let g:sh_indent_case_labels=1
+"}}}
 
-" namelist file filter {{{
-" associate *.foo with php filetype
+" fortran commands{{{
+let fortran_free_source=1
+autocmd FileType fortran setlocal textwidth=0
 au BufRead,BufNewFile *namelist*.input* setfiletype fortran
+au! BufRead,BufNewFile *.f90 let b:fortran_do_enddo=1
+au! BufRead,BufNewFile *.F let b:fortran_do_enddo=1
 "au BufRead,BufNewFile *inc set filetype=fortran
 " }}}
 
@@ -169,7 +183,7 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 "}}}
-"
+
 " spelling {{{
 set spelllang=en
 set spellfile=~/.vim/bundle/vundle/spell/en.utf-8.add
@@ -181,13 +195,13 @@ nnoremap <silent> <leader>tp :tabp<CR>
 nnoremap <silent> <leader>tl :tablast<CR>
 nnoremap <silent> <leader>tf :tabfirst<CR>
 "}}}
-"
+
 "xml syntax folding {{{
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
 au FileType xsd setlocal foldmethod=syntax
 "}}}
-"
+
 "colorscheme http://vimcolorschemetest.googlecode.com/svn/html/index-html.html{{{
 "syntax enable 
 let g:molokai_original=1

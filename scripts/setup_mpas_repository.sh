@@ -1,7 +1,7 @@
 #!/bin/bash
 
-O_AUTH_TOKEN="OAUTH_TOKEN_HERE"
-GITHUB_USERNAME="GITHUB_USERNAME_HERE"
+O_AUTH_TOKEN=`cat ~/.github_token`
+GITHUB_USERNAME="pwolfram"
 
 SHARED_REPOS="MPAS MPAS-Documents MPAS-Tools MPAS-Testing"
 

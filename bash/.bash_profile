@@ -95,7 +95,7 @@ if [ $platform == 'macosx' ]; then
 
   source `brew --repository`/Library/Contributions/brew_bash_completion.sh
 
-  export PATH=/Users/pwolfram/bin:/usr/local/bin:/usr/local/sbin:$PATH
+  export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 
   export PYTHONDIR=/Library/Frameworks/Python.framework/Versions/2.7/bin
@@ -118,6 +118,12 @@ if [ $platform == 'macosx' ]; then
   export ALL_PROXY=$http_proxy
 
   alias xdvi='xdvik -geometry 1200x1445+1360+0 -s 5'
+
+
+  # MPAS variables
+  export NETCDF=/usr/local/
+  export PNETCDF=/usr/local/
+  export PIO=/usr/local/
 
   #generalized colors
   source "`brew --prefix grc`/etc/grc.bashrc"

@@ -47,8 +47,10 @@ ln -s ${PWD}/vim/.vimrc.bundles ~/.vimrc.bundles
 ln -s ${PWD}/tmux/.tmux.conf ~/.tmux.conf
 ln -s ${PWD}/screen/.screenrc ~/.screenrc
 
-cp ${PWD}/git/.gitconfig ~/.
-cp ${PWD}/git/.git-completion.bash ~/.
+ln -s ${PWD}/git/.gitconfig ~/.
+ln -s ${PWD}/git/.git-completion.bash ~/.
+ln -s ${PWD}/git/core_excludes ~/.git_core_excludes
+
 git config --global core.excludesfile "${PWD}/git/core_excludes"
 
 mkdir -p ~/scripts
