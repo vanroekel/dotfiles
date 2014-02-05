@@ -115,7 +115,8 @@ if [ $platform == 'macosx' ]; then
   export http_proxy=http://proxyout.lanl.gov:8080
   export https_proxy=http://proxyout.lanl.gov:8080
   export all_proxy=proxy.lanl.gov:8080
-  export ALL_PROXY=$http_proxy
+  #export ftp_proxy="http://proxyout.lanl.gov"
+  export no_proxy="*.lanl.gov"
 
   alias xdvi='xdvik -geometry 1200x1445+1360+0 -s 5'
 
