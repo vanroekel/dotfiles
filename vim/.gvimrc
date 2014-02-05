@@ -7,7 +7,8 @@
 "colorscheme northland
 "colorscheme northsky
 "colorscheme solarized
-colorscheme slate
+"colorscheme slate
+colorscheme molokai
 "set background=dark
 set guifont=Menlo\ Regular:h15
 

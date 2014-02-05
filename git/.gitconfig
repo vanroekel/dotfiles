@@ -5,6 +5,7 @@
 	editor = vim
 	autocrlf = input
 	whitespace = trailing-space
+	excludesfile = ~/.git_core_excludes
 [giggle]
 	main-window-maximized = false
 	main-window-geometry = 944x754+213+24
@@ -37,4 +38,4 @@
 [push]
 	default = current
 [http]
-	proxy = 
+	proxy = http://proxyout.lanl.gov:8080
