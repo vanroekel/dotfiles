@@ -1,6 +1,6 @@
 #!/bin/bash
 
-O_AUTH_TOKEN="OAUTH_TOKEN_HERE"
+O_AUTH_TOKEN=`cat ~/.github_token`
 GITHUB_USERNAME="GITHUB_USERNAME_HERE"
 
 SHARED_REPOS="MPAS MPAS-Documents MPAS-Tools MPAS-Testing MPAS-Scratch"

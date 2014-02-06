@@ -59,7 +59,7 @@ do
 	git fetch --tags &> /dev/null
 	NEW_BRANCHES=`grep "\[new branch\]" ${ROOT_DIR}/fetch_progress | wc -l`
 	echo "    Added ${NEW_BRANCHES} remote tracking branches"
-	rm ${ROOT_DIR}/fetch_progress
+	rm -f ${ROOT_DIR}/fetch_progress
 
 	cd ${ROOT_DIR}
 done
