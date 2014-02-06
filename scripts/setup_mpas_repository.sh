@@ -1,9 +1,9 @@
 #!/bin/bash
 
-O_AUTH_TOKEN="OAUTH_TOKEN_HERE"
-GITHUB_USERNAME="GITHUB_USERNAME_HERE"
+O_AUTH_TOKEN=`cat ~/.github_token`
+GITHUB_USERNAME="pwolfram"
 
-SHARED_REPOS="MPAS MPAS-Documents MPAS-Tools MPAS-Testing"
+SHARED_REPOS="MPAS MPAS-Documents MPAS-Tools MPAS-Testing MPAS-Scratch"
 
 ROOT_DIR=`pwd`
 
@@ -26,11 +26,17 @@ fi
 for SHARED_REPO in ${SHARED_REPOS}
 do
 	DIR_NAME=`echo "${SHARED_REPO}" | tr '[:upper:]' '[:lower:]' | tr '-' '_'`
-	mkdir -p ${DIR_NAME}
-	cd ${DIR_NAME}
+
+	if [ "$DIR_NAME" != "mpas" ]; then
+		WORK_DIR_NAME=`echo ${DIR_NAME} | sed "s/mpas_//g"`
+	else 
+		WORK_DIR_NAME=${DIR_NAME}
+	fi
+
+	mkdir -p ${WORK_DIR_NAME}
+	cd ${WORK_DIR_NAME}
 
 	curl -s -H "Authorization: TOKEN ${O_AUTH_TOKEN}" -X POST -i https://api.github.com/repos/MPAS-Dev/${SHARED_REPO}/forks &> /dev/null
-	REPO_LIST=`curl -s -H "Authorization: TOKEN ${O_AUTH_TOKEN}" -i https://api.github.com/orgs/MPAS-Dev/repos | grep '"name"' | awk '{print $2}' | sed "s/,//g" | sed "s/\"//g"`
 
 	echo "Cloning shared repository ${SHARED_REPO}"
 	git clone git@github.com:MPAS-Dev/${SHARED_REPO}.git ${DIR_NAME}_repo &> /dev/null

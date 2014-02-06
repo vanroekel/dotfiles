@@ -27,9 +27,9 @@ git clone ${BASH_IT_ADDR} ~/.bash_it
 
 ~/.bash_it/install.sh
 
-cp bash/.bashrc ~/.
-cp bash/.bash_profile ~/.
-cp bash/.bash_aliases ~/.
+ln -s ${PWD}/bash/.bashrc ~/.bashrc
+ln -s ${PWD}/bash/.bash_profile ~/.bash_profile
+ln -s ${PWD}/bash/.bash_aliases ~/.bash_aliases
 
 CUSTOM_FILES=`ls bash-it-custom/`
 for FILE in ${CUSTOM_FILES}
@@ -45,12 +45,26 @@ ln -s ${PWD}/vim/.vimspell.en.utf-8.add ~/.vim/bundle/vundle/spell/en.utf-8.add
 ln -s ${PWD}/vim/.gvimrc ~/.gvimrc
 ln -s ${PWD}/vim/.vimrc.bundles ~/.vimrc.bundles
 ln -s ${PWD}/tmux/.tmux.conf ~/.tmux.conf
+ln -s ${PWD}/screen/.screenrc ~/.screenrc
 
-cp ${PWD}/git/.gitconfig ~/.
-cp ${PWD}/git/.git-completion.bash ~/.
-git config --global core.excludesfile "${PWD}/git/core_excludes"
+ln -s ${PWD}/git/.gitconfig ~/.
+ln -s ${PWD}/git/.git-completion.bash ~/.
+ln -s ${PWD}/git/core_excludes ~/.git_core_excludes
+
+#git config --global core.excludesfile "${PWD}/git/core_excludes"
 
 mkdir -p ~/scripts
 cp -R scripts/* ~/scripts/.
 
 vim -u ~/.vimrc.bundles +BundleInstall +q
+
+###### MAC OSX Specifics ####################
+# install osx-trash if on macosx
+if [ `uname` == 'Darwin' ]; then 
+  sudo gem install osx-trash
+  brew install ack
+fi
+
+if [ `uname` == 'Linux' ]; then
+  git clone git@github.com:Homebrew/linuxbrew.git ~/.linuxbrew
+fi

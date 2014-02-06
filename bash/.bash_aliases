@@ -16,7 +16,7 @@ alias grb='git rb'
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=always'
+    alias ls='ls --color=always -GFh'
     alias less='less -R'
     alias dir='dir --color=always'
     alias vdir='vdir --color=always'
@@ -30,6 +30,7 @@ fi
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
+alias cack='ack --color'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

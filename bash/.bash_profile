@@ -66,18 +66,36 @@ source $BASH_IT/bash_it.sh
 # for MACOSX
 platform='unknown'
 unamestr=`uname`
+
 if [[ "$unamestr" == "Darwin" ]]; then
   platform='macosx'
 else
   platform='nix'
 fi
 
-if [ $platform == 'macosx' ]; then
-  ##export CLICOLOR=1
-  ##export LSCOLORS=ExFxCxDxBxegedabagacad
+if [ $platform == 'nix' ]; then #{{{
+  # instsall homebrew for linux
+  #git clone git@github.com:Homebrew/linuxbrew.git ~/.linuxbrew
+  export PATH="$HOME/.linuxbrew/bin:$PATH"
+  export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
+fi  #}}}
+
+if [ $platform == 'macosx' ]; then  #{{{
+  export CLICOLOR=1
+  export LSCOLORS=ExFxCxDxBxegedabagacad
+  export LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:'
+  #export GREP_OPTIONS='--color=auto'
   # export CLICOLOR=1
   # export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
+  alias ls='CLICOLOR_FORCE=1 ls -G'
+  alias less='less -R'
+  alias dir='dir --color=always'
+  alias vdir='vdir --color=always'
+
+  alias cgrep='grep --color=always -n'
+  alias fgrep='fgrep --color=always'
+  alias egrep='egrep --color=always'
 
   ##
   # Your previous /Users/pwolfram/.bash_profile file was backed up as /Users/pwolfram/.bash_profile.macports-saved_2014-01-07_at_16:00:10
@@ -85,13 +103,12 @@ if [ $platform == 'macosx' ]; then
 
   source `brew --repository`/Library/Contributions/brew_bash_completion.sh
 
-  export PATH=/usr/local/bin:$PATH
-  export PATH=/usr/local/sbin:$PATH
+  export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 
   export PYTHONDIR=/Library/Frameworks/Python.framework/Versions/2.7/bin
   export PYTHONPATH=$PYTHONPATH:/Library/Frameworks/Python.framework/Versions/2.7/bin
-  export PYTHONPATH=$PYTHONPATH:/Users/pwolfram/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages
+  #export PYTHONPATH=$PYTHONPATH:/Users/pwolfram/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages
   export PYTHONPATH=$PYTHONPATH:/Applications/Canopy.app/appdata/canopy-1.0.1.1189.macosx-x86_64/Canopy.app/Contents/lib/python2.7/site-packages
 
   # Added by Canopy installer on 2014-01-10
@@ -106,7 +123,20 @@ if [ $platform == 'macosx' ]; then
   export http_proxy=http://proxyout.lanl.gov:8080
   export https_proxy=http://proxyout.lanl.gov:8080
   export all_proxy=proxy.lanl.gov:8080
-  export ALL_PROXY=$http_proxy
+  #export ftp_proxy="http://proxyout.lanl.gov"
+  export no_proxy="*.lanl.gov"
 
   alias xdvi='xdvik -geometry 1200x1445+1360+0 -s 5'
-fi
+
+
+  # MPAS variables
+  export NETCDF=/usr/local/
+  export PNETCDF=/usr/local/
+  export PIO=/usr/local/
+
+  #generalized colors
+  source "`brew --prefix grc`/etc/grc.bashrc"
+
+  # make sure MacOSX inherits correct variables for launcher
+  #launchtcl setenv PATH $PATH
+fi #}}}
