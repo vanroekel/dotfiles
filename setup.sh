@@ -51,7 +51,7 @@ ln -s ${PWD}/git/.gitconfig ~/.
 ln -s ${PWD}/git/.git-completion.bash ~/.
 ln -s ${PWD}/git/core_excludes ~/.git_core_excludes
 
-git config --global core.excludesfile "${PWD}/git/core_excludes"
+#git config --global core.excludesfile "${PWD}/git/core_excludes"
 
 mkdir -p ~/scripts
 cp -R scripts/* ~/scripts/.
