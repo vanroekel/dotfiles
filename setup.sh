@@ -55,6 +55,7 @@ ln -s ${PWD}/git/core_excludes ~/.git_core_excludes
 
 mkdir -p ~/scripts
 cp -R scripts/* ~/scripts/.
+#ln ${PWD}/scripts ~/scripts
 
 vim -u ~/.vimrc.bundles +BundleInstall +q
 
