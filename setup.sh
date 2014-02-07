@@ -32,33 +32,32 @@ if [ -f ~/.login ]; then
     mv ~/.login ~/tcshBackups/.
 fi
 
-if [ -f ~/.tmux.conf]; then
+if [ -f ~/.tmux.conf ]; then
     mkdir -p ~/tmuxBackup
     mv ~/.tmux.conf ~/tmuxBackup/.
 fi
 
-if [ -f ~/.screenrc]; then
+if [ -f ~/.screenrc ]; then
     mkdir -p ~/screenrcBackup
     mv ~/.screenrc ~/screenrcBackup/.
 fi
 
-
-if [ -f ~/.screenrc]; then
+if [ -f ~/.screenrc ]; then
     mkdir -p ~/screenrcBackup
     mv ~/.screenrc ~/screenrcBackup/.
 fi
 
-if [ -f ~/.gitconfig]; then
+if [ -f ~/.gitconfig ]; then
     mkdir -p ~/gitBackup
     mv ~/.gitconfig ~/gitBackup/.
 fi
 
-if [ -f ~/.git-completion.bash]; then
+if [ -f ~/.git-completion.bash ]; then
     mkdir -p ~/gitBackup
     mv ~/.git-completion.bash ~/gitBackup/.
 fi
 
-if [ -f ~/.git_core_excludes]; then
+if [ -f ~/.git_core_excludes ]; then
     mkdir -p ~/gitBackup
     mv ~/.git_core_excludes ~/gitBackup/.
 fi
