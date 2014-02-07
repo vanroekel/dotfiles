@@ -44,7 +44,7 @@ do
 		cd ${DIR_NAME}_repo
 
 		FORK_URL="https://api.github.com/repos/MPAS-Dev/${SHARED_REPO}/forks"
-		FORK_LIST=`curl -s -H "Authorization: TOKEN ${O_AUTH_TOKEN}" -i ${FORK_URL} | grep '"full_name"' | awk '{print $2}' | sed "s/,//g" | sed "s/\"//g"`
+		FORK_LIST=`curl -s -H "Authorization: TOKEN ${O_AUTH_TOKEN}" -i ${FORK_URL} | grep '"full_name"' | awk '{print $3}' | sed "s/,//g" | sed "s/\"//g"`
 
 		REMOTES=`git remote -v | awk '{print $1}' | sort -u`
 
