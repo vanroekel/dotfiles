@@ -68,7 +68,7 @@ git clone ${BASH_IT_ADDR} ~/.bash_it
 ~/.bash_it/install.sh
 
 ln -s ${PWD}/bash/.bashrc ~/.bashrc
-ln -s ${PWD}/bash/.bash_profile ~/.bash_profile
+ln -sf ${PWD}/bash/.bash_profile ~/.bash_profile
 ln -s ${PWD}/bash/.bash_aliases ~/.bash_aliases
 ln -s ${PWD}/tcsh/.login ~/.login
 
