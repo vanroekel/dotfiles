@@ -67,7 +67,9 @@ execute pathogen#infect('local/{}')
 
 "let mapleader=','
 
-" indents, tabs, backspace {{{
+" indents, tabs, backspace, ignore case {{{
+set ignorecase
+set smartcase
 set autoindent
 "set cindent
 "set smartindent
@@ -94,6 +96,7 @@ set foldmethod=marker
 
 " function key mappings {{{
 "set pastetoggle=<F3>
+noremap <F2> @='a!PJW '<CR>
 nnoremap <F3> "=strftime("%x")<CR>P
 inoremap <F3> <C-R>=strftime("%x")<CR>
 noremap <F4> :set number! number?<CR>
@@ -173,6 +176,8 @@ let g:sh_indent_case_labels=1
 let fortran_free_source=1
 autocmd FileType fortran setlocal textwidth=0
 au BufRead,BufNewFile *namelist*.input* setfiletype fortran
+"au BufRead,BufWritePost *.inc setfiletype fortran
+au BufRead,BufEnter *.inc setfiletype fortran
 au! BufRead,BufNewFile *.f90 let b:fortran_do_enddo=1
 au! BufRead,BufNewFile *.F let b:fortran_do_enddo=1
 "au BufRead,BufNewFile *inc set filetype=fortran
@@ -204,10 +209,11 @@ au FileType xsd setlocal foldmethod=syntax
 
 "colorscheme http://vimcolorschemetest.googlecode.com/svn/html/index-html.html{{{
 "syntax enable 
-let g:molokai_original=1
-let g:rehash256=1
-set background=dark
-colorscheme molokai
+"let g:molokai_original=1
+"let g:rehash256=1
+"set background=dark
+"colorscheme molokai
+
 "let g:solarized_termcolors=256
 "set background=dark
 "colorscheme solarized

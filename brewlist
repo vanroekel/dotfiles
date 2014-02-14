@@ -1,4 +1,6 @@
 ack
+antlr
+antlr2
 apple-gcc42
 arpack
 autoconf
@@ -21,6 +23,7 @@ gnu-sed
 gnuplot
 graphicsmagick
 grc
+gsl
 gv
 hdf5
 htop-osx
@@ -37,9 +40,12 @@ lua
 macvim
 metis
 mpfr
+nco
+ncview
 netcdf
 newt
 octave
+openssl
 pcre
 pkg-config
 popt
@@ -53,6 +59,7 @@ szip
 tbb
 texinfo
 tmux
+udunits
 vim
 wget
 xz
