@@ -4,7 +4,7 @@
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 # Add rvm gems and nginx to the path
-export PATH=$PATH:~/.gem/ruby/1.8/bin:/opt/nginx/sbin
+#export PATH=$PATH:~/.gem/ruby/1.8/bin:/opt/nginx/sbin
 
 # Path to the bash it configuration
 export BASH_IT=$HOME/.bash_it
@@ -31,7 +31,7 @@ export EDITOR="vim"
 export GIT_EDITOR='vim'
 
 # Set the path nginx
-export NGINX_PATH='/opt/nginx'
+#export NGINX_PATH='/opt/nginx'
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
@@ -76,7 +76,7 @@ fi
 if [ $platform == 'nix' ]; then #{{{
   # instsall homebrew for linux
   #git clone git@github.com:Homebrew/linuxbrew.git ~/.linuxbrew
-  export PATH="$HOME/.linuxbrew/bin:$PATH"
+  export PATH="/users/pwolfram:/turquoise/users/pwolfram:$HOME/.linuxbrew/bin:$PATH"
   export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
 fi  #}}}
 

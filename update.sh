@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# cp's not needed because we are using symbolic links now
+
 #cp bash/.bashrc ~/.
 #cp bash/.bash_profile ~/.
 #cp bash/.bash_aliases ~/.

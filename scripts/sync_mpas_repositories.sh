@@ -1,7 +1,7 @@
 #!/bin/bash
 
-O_AUTH_TOKEN="OAUTH_TOKEN_HERE"
-GITHUB_USERNAME="GITHUB_USERNAME_HERE"
+O_AUTH_TOKEN=`cat ~/.github_token`
+GITHUB_USERNAME="pwolfram"
 
 SHARED_REPOS="MPAS MPAS-Documents MPAS-Tools MPAS-Testing MPAS-Scratch"
 
@@ -44,7 +44,7 @@ do
 		cd ${DIR_NAME}_repo
 
 		FORK_URL="https://api.github.com/repos/MPAS-Dev/${SHARED_REPO}/forks"
-		FORK_LIST=`curl -s -H "Authorization: TOKEN ${O_AUTH_TOKEN}" -i ${FORK_URL} | grep '"full_name"' | awk '{print $2}' | sed "s/,//g" | sed "s/\"//g"`
+		FORK_LIST=`curl -s -H "Authorization: TOKEN ${O_AUTH_TOKEN}" -i ${FORK_URL} | grep '"full_name"' | awk '{print $3}' | sed "s/,//g" | sed "s/\"//g"`
 
 		REMOTES=`git remote -v | awk '{print $1}' | sort -u`
 

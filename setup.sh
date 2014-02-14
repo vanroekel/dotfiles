@@ -22,14 +22,55 @@ if [ -f ~/.bash_profile ]; then
     mv ~/.bash_profile ~/BashBackups/.
 fi
 
+if [ -f ~/.bash_aliases ]; then
+    mkdir -p ~/BashBackups
+    mv ~/.bash_aliases ~/BashBackups/.
+fi
+
+if [ -f ~/.login ]; then
+    mkdir -p ~/tcshBackups
+    mv ~/.login ~/tcshBackups/.
+fi
+
+if [ -f ~/.tmux.conf ]; then
+    mkdir -p ~/tmuxBackup
+    mv ~/.tmux.conf ~/tmuxBackup/.
+fi
+
+if [ -f ~/.screenrc ]; then
+    mkdir -p ~/screenrcBackup
+    mv ~/.screenrc ~/screenrcBackup/.
+fi
+
+if [ -f ~/.screenrc ]; then
+    mkdir -p ~/screenrcBackup
+    mv ~/.screenrc ~/screenrcBackup/.
+fi
+
+if [ -f ~/.gitconfig ]; then
+    mkdir -p ~/gitBackup
+    mv ~/.gitconfig ~/gitBackup/.
+fi
+
+if [ -f ~/.git-completion.bash ]; then
+    mkdir -p ~/gitBackup
+    mv ~/.git-completion.bash ~/gitBackup/.
+fi
+
+if [ -f ~/.git_core_excludes ]; then
+    mkdir -p ~/gitBackup
+    mv ~/.git_core_excludes ~/gitBackup/.
+fi
+
 git clone ${VUNDLE_ADDR} ~/.vim/bundle/vundle
 git clone ${BASH_IT_ADDR} ~/.bash_it
 
 ~/.bash_it/install.sh
 
 ln -s ${PWD}/bash/.bashrc ~/.bashrc
-ln -s ${PWD}/bash/.bash_profile ~/.bash_profile
+ln -sf ${PWD}/bash/.bash_profile ~/.bash_profile
 ln -s ${PWD}/bash/.bash_aliases ~/.bash_aliases
+ln -s ${PWD}/tcsh/.login ~/.login
 
 CUSTOM_FILES=`ls bash-it-custom/`
 for FILE in ${CUSTOM_FILES}
@@ -55,6 +96,7 @@ ln -s ${PWD}/git/core_excludes ~/.git_core_excludes
 
 mkdir -p ~/scripts
 cp -R scripts/* ~/scripts/.
+#ln ${PWD}/scripts ~/scripts
 
 vim -u ~/.vimrc.bundles +BundleInstall +q
 
@@ -65,6 +107,6 @@ if [ `uname` == 'Darwin' ]; then
   brew install ack
 fi
 
-if [ `uname` == 'Linux' ]; then
-  git clone git@github.com:Homebrew/linuxbrew.git ~/.linuxbrew
-fi
+#if [ `uname` == 'Linux' ]; then
+#  git clone git@github.com:Homebrew/linuxbrew.git ~/.linuxbrew
+#fi
