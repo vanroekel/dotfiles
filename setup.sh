@@ -100,6 +100,8 @@ cp -R scripts/* ~/scripts/.
 
 vim -u ~/.vimrc.bundles +BundleInstall +q
 
+ln -s ${PWD}/vim/scripts.vim ~/.vim/scripts.vim
+
 ###### MAC OSX Specifics ####################
 # install osx-trash if on macosx
 if [ `uname` == 'Darwin' ]; then 

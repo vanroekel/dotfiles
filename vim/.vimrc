@@ -1,4 +1,4 @@
-"set term=xterm-color
+set term=xterm-256color
 
 " Setup {{{
 source ~/.vimrc.bundles
@@ -73,7 +73,7 @@ set smartcase
 set autoindent
 "set cindent
 "set smartindent
-"set number
+set number
 "set tabstop=4
 "set shiftwidth=4
 "set softtabstop=4 
@@ -209,10 +209,10 @@ au FileType xsd setlocal foldmethod=syntax
 
 "colorscheme http://vimcolorschemetest.googlecode.com/svn/html/index-html.html{{{
 "syntax enable 
-"let g:molokai_original=1
+let g:molokai_original=1
 "let g:rehash256=1
 "set background=dark
-"colorscheme molokai
+colorscheme molokai
 
 "let g:solarized_termcolors=256
 "set background=dark

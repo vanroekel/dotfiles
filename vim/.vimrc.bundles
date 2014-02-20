@@ -68,3 +68,5 @@ Bundle 'git@github.com:mileszs/ack.vim.git'
 Bundle 'git://github.com/altercation/vim-colors-solarized.git'
 Bundle 'git@github.com:flazz/vim-colorschemes.git'
 Bundle 'git@github.com:tomasr/molokai.git'
+
+Bundle 'git@github.com:vim-scripts/AnsiEsc.vim.git'
