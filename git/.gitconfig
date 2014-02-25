@@ -38,4 +38,4 @@
 [push]
 	default = current
 [http]
-	proxy = 
+	proxy = http://proxyout.lanl.gov:8080
