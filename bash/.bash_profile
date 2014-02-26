@@ -121,7 +121,7 @@ if [ $platform == 'macosx' ]; then  #{{{
   #export PATH=~/Documents/MPAS:usr/texbin:$PATH
   export PATH=usr/texbin:$PATH
   export http_proxy=http://proxyout.lanl.gov:8080
-  #export https_proxy=https://proxyout.lanl.gov:8080
+  export https_proxy=https://proxyout.lanl.gov:8080
   export all_proxy=proxy.lanl.gov:8080
   #export ftp_proxy="http://proxyout.lanl.gov"
   export no_proxy="*.lanl.gov"

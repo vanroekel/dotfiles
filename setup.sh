@@ -92,6 +92,8 @@ ln -s ${PWD}/git/.gitconfig ~/.
 ln -s ${PWD}/git/.git-completion.bash ~/.
 ln -s ${PWD}/git/core_excludes ~/.git_core_excludes
 
+ln -s ${PWD}/pdb/.pdbrc ~/.pdbrc
+
 #git config --global core.excludesfile "${PWD}/git/core_excludes"
 
 mkdir -p ~/scripts

@@ -44,6 +44,7 @@ Bundle 'git@github.com:pwolfram/python-mode'
 Bundle 'git@github.com:vim-scripts/python.vim.git'
 Bundle 'git@github.com:vim-scripts/python_match.vim.git'
 Bundle 'git@github.com:vim-scripts/pythoncomplete.git'
+Bundle 'git@github.com:gotcha/vimpdb.git'
 
 Bundle 'git@github.com:vim-scripts/taglist.vim.git'
 
@@ -68,5 +69,6 @@ Bundle 'git@github.com:mileszs/ack.vim.git'
 Bundle 'git://github.com/altercation/vim-colors-solarized.git'
 Bundle 'git@github.com:flazz/vim-colorschemes.git'
 Bundle 'git@github.com:tomasr/molokai.git'
+Bundle 'git@github.com:chriskempson/vim-tomorrow-theme.git'
 
 Bundle 'git@github.com:vim-scripts/AnsiEsc.vim.git'

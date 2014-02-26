@@ -178,6 +178,7 @@ autocmd FileType fortran setlocal textwidth=0
 au BufRead,BufNewFile *namelist*.input* setfiletype fortran
 "au BufRead,BufWritePost *.inc setfiletype fortran
 au BufRead,BufEnter *.inc setfiletype fortran
+au BufRead,BufEnter *.i setfiletype fortran
 au! BufRead,BufNewFile *.f90 let b:fortran_do_enddo=1
 au! BufRead,BufNewFile *.F let b:fortran_do_enddo=1
 "au BufRead,BufNewFile *inc set filetype=fortran
