@@ -110,10 +110,14 @@ if [ $platform == 'macosx' ]; then  #{{{
   export PYTHONPATH=$PYTHONPATH:/Library/Frameworks/Python.framework/Versions/2.7/bin
   #export PYTHONPATH=$PYTHONPATH:/Users/pwolfram/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages
   export PYTHONPATH=$PYTHONPATH:/Applications/Canopy.app/appdata/canopy-1.0.1.1189.macosx-x86_64/Canopy.app/Contents/lib/python2.7/site-packages
-
+  
+  export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+  
   # Added by Canopy installer on 2014-01-10
   # VIRTUAL_ENV_DISABLE_PROMPT can be set to '' to make bashprompt show that Canopy is active, otherwise 1
-  #VIRTUAL_ENV_DISABLE_PROMPT=1 source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate
+  #export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate
+  alias python-epd="bash -c ' export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate; python '"
+  alias ipython-epd="bash -c ' export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate; ipython '"
 
   # git completion 
   source ~/.git-completion.bash

@@ -31,7 +31,7 @@ alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
 alias cack='ack --color'
-alias cack_ocean='ack --color --ignore-dir=src/core_atmosphere/ --ignore-dir=src/core_init_atmosphere/ --ignore-dir=src/core_landice/ --ignore-dir=src/core_sw/'
+alias cack_ocean='ack --color --ignore-dir=src/core_atmosphere/ --ignore-dir=src/core_init_atmosphere/ --ignore-dir=src/core_landice/ --ignore-dir=src/core_sw/ --ignore-dir=DoxygenDocumentation'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'

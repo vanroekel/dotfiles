@@ -73,7 +73,10 @@ set smartcase
 set autoindent
 "set cindent
 "set smartindent
+" set line numbers and highlight current line number {{{
 set number
+set cursorline
+" }}}
 "set tabstop=4
 "set shiftwidth=4
 "set softtabstop=4 
@@ -105,7 +108,7 @@ noremap <F6> :RainbowParenthesesToggleAll<CR>
 noremap <F7> :syntax on<CR>
 noremap <F8> :Tlist<CR>
 "noremap <F9> source /home/pwolfram/.vim/plugin/python_fold.vim<CR>
-"syntax on
+syntax on
 "}}}
 
 " {{{ command completion (always leave command line on)
@@ -209,7 +212,7 @@ au FileType xsd setlocal foldmethod=syntax
 "}}}
 
 "colorscheme http://vimcolorschemetest.googlecode.com/svn/html/index-html.html{{{
-"syntax enable 
+syntax enable 
 let g:molokai_original=1
 "let g:rehash256=1
 "set background=dark
@@ -219,4 +222,21 @@ colorscheme molokai
 "set background=dark
 "colorscheme solarized
 "colorscheme slate
+"}}}
+"
+"latex concealment {{{
+"http://b4winckler.wordpress.com/2010/08/07/using-the-conceal-vim-feature-with-latex/
+set cole=2
+let g:tex_conceal= 'abdgms'
+" decent value for vim concealment
+"setlocal conceallevel=2
+highlight Conceal guifg=white guibg=black ctermbg=black ctermfg=white
+"let g:tex_conceal = ""
+"
+"        a = accents/ligatures
+"        b = bold and italic
+"        d = delimiters
+"        m = math symbols
+"        g = Greek
+"        s = superscripts/subscripts
 "}}}
