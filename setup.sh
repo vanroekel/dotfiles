@@ -88,6 +88,11 @@ ln -s ${PWD}/vim/.vimrc.bundles ~/.vimrc.bundles
 ln -s ${PWD}/tmux/.tmux.conf ~/.tmux.conf
 ln -s ${PWD}/screen/.screenrc ~/.screenrc
 
+if [ ! -d ~/.vim/after/syntax/ ]; then 
+  mkdir -p ~/.vim/after/syntax/
+fi
+ln -sf ${PWD}/vim/tex.vim ~/.vim/after/syntax/tex.vim
+
 ln -s ${PWD}/git/.gitconfig ~/.
 ln -s ${PWD}/git/.git-completion.bash ~/.
 ln -s ${PWD}/git/core_excludes ~/.git_core_excludes

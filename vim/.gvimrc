@@ -12,5 +12,5 @@ colorscheme molokai
 "set background=dark
 set guifont=Menlo\ Regular:h15
 
-highlight Conceal guibg=black guifg=white
+"hi Conceal guibg=black guifg=white
 "source ~/.vimrc
