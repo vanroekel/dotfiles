@@ -45,6 +45,7 @@ hdf5
 hicolor-icon-theme
 htop-osx
 icu4c
+imagemagick
 inkscape
 intltool
 isl
@@ -57,6 +58,7 @@ libpng
 libsigc++
 libtiff
 libtool
+libxml2
 little-cms
 little-cms2
 lua
@@ -77,8 +79,13 @@ pcre
 pdf2svg
 pixman
 pkg-config
+plotutils
 poppler
 popt
+pstoedit
+py2cairo
+pygobject
+pygtk
 pyqt
 qhull
 qrupdate
