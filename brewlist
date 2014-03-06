@@ -34,6 +34,7 @@ gnu-sed
 gnuplot
 gobject-introspection
 graphicsmagick
+graphviz
 grc
 gsl
 gtk+
@@ -60,6 +61,7 @@ little-cms
 little-cms2
 lua
 macvim
+mercurial
 metis
 mpfr
 nco
@@ -67,12 +69,15 @@ ncview
 netcdf
 newt
 octave
+openjpeg
 openssl
 pango
 pangomm
 pcre
+pdf2svg
 pixman
 pkg-config
+poppler
 popt
 pyqt
 qhull
@@ -90,7 +95,8 @@ texinfo
 tmux
 udunits
 vim
-vtk
 watch
 wget
+wxmac
 xz
+zeromq
