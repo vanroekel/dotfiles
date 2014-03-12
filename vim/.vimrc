@@ -230,7 +230,7 @@ set cole=2
 let g:tex_conceal= 'abdgms'
 " decent value for vim concealment
 "setlocal conceallevel=2
-highlight Conceal guifg=white guibg=black ctermbg=black ctermfg=white
+highlight Conceal ctermbg=black ctermfg=white guifg=white guibg=black 
 "let g:tex_conceal = ""
 "
 "        a = accents/ligatures

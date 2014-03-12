@@ -141,6 +141,7 @@ if [ $platform == 'macosx' ]; then  #{{{
   #generalized colors
   source "`brew --prefix grc`/etc/grc.bashrc"
 
+  alias skim='/Applications/Skim.app/Contents/MacOS/Skim'
   # make sure MacOSX inherits correct variables for launcher
   #launchtcl setenv PATH $PATH
 fi #}}}
