@@ -18,11 +18,13 @@ cmake
 coreutils
 cscope
 ctags
+ddd
 dotwrp
 fftw
 fontconfig
 freetype
 gd
+gdb
 gdk-pixbuf
 gettext
 gfortran
@@ -51,6 +53,7 @@ intltool
 isl
 jbig2dec
 jpeg
+lesstif
 libevent
 libffi
 libmpc

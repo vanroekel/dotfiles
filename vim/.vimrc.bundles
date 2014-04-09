@@ -36,6 +36,7 @@ Bundle 'git@github.com:godlygeek/tabular'
 " generate the tags throughout all the files for best effect
 if executable('ctags')
     Bundle 'git@github.com:majutsushi/tagbar'
+    " http://www.thegeekstuff.com/2009/04/ctags-taglist-vi-vim-editor-as-sourece-code-browser/
 endif
 "Bundle 'git@github.com:Shougo/neocomplcache'
 Bundle 'git@github.com:tpope/vim-pathogen'
