@@ -39,3 +39,6 @@
 	default = current
 [http]
 	proxy = http://proxyout.lanl.gov:8080
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
