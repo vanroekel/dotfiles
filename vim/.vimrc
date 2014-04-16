@@ -213,14 +213,14 @@ au FileType xsd setlocal foldmethod=syntax
 
 "colorscheme http://vimcolorschemetest.googlecode.com/svn/html/index-html.html{{{
 syntax enable 
-let g:molokai_original=1
+"let g:molokai_original=1
 "let g:rehash256=1
 "set background=dark
-colorscheme molokai
+"colorscheme molokai
 
 "let g:solarized_termcolors=256
-"set background=dark
-"colorscheme solarized
+colorscheme solarized
+set background=dark
 "colorscheme slate
 "}}}
 "
