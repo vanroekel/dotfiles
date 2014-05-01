@@ -42,7 +42,7 @@ endif
 Bundle 'git@github.com:tpope/vim-pathogen'
 "Bundle 'git@github.com:klen/python-mode'
 Bundle 'git@github.com:pwolfram/python-mode'
-Bundle 'git@github.com:vim-scripts/python.vim.git'
+Bundle 'git@github.com:pwolfram/python.vim.git'
 Bundle 'git@github.com:vim-scripts/python_match.vim.git'
 Bundle 'git@github.com:vim-scripts/pythoncomplete.git'
 " git@github.com:gotcha/vimpdb.git just install with pip or easy_install
