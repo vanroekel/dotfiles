@@ -21,7 +21,25 @@ execute pathogen#infect('local/{}')
 " UndoTree {{{
 	nnoremap <Leader>u :UndotreeToggle<CR>
 	" If undotree is opened, it is likely one wants to interact with it.
+  " Also, note that for persistent undo to work the .vim/view files
+  " must be removed to 'start fresh' for saving of the undo tree to
+  " work.  Also, permissions for the group may need to be set consistent
+  " with vim for this to work too.
 	let g:undotree_SetFocusWhenToggle=1
+  if has('persistent_undo')
+    set undofile    
+    let vimDir = '$HOME/.vim'
+    let myUndoDir = expand(vimDir . '/undodir/')
+    let &runtimepath.=','.vimDir
+    let &undodir = myUndoDir
+    "call system('mkdir ' . myUndoDir)
+    set undodir=~/.vim/undodir/
+    "set hidden  
+    "echo &undofile
+    "echo &undodir
+    set undolevels=1000         " How many undos
+    set undoreload=10000        " number of lines to save for undo
+  endif
 " }}}
 
 " UnBundle {{{
@@ -88,7 +106,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2 
 set expandtab
-set backspace+=indent,eol,start
+set backspace+=indent,eol,start 
 "}}}}
 
 " automatically save and load folds {{{
@@ -219,9 +237,10 @@ syntax enable
 "colorscheme molokai
 
 "let g:solarized_termcolors=256
+let g:solarized_termtrans=1
 colorscheme solarized
 set background=dark
-"colorscheme slate
+""colorscheme slate
 "}}}
 "
 "latex concealment {{{
