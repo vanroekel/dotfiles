@@ -99,6 +99,7 @@ readline
 rubber
 ruby186
 s-lang
+shtool
 sip
 suite-sparse
 szip
@@ -110,5 +111,6 @@ vim
 watch
 wget
 wxmac
+xml2
 xz
 zeromq
