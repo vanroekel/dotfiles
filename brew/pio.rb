@@ -12,20 +12,20 @@ class Pio < Formula
 
   def install
     ENV.deparallelize  # if your formula fails when building in parallel
-    puts ENV['NETCDF_PATH']
-    ENV['NETCDF_PATH'] = "/usr/local"
-    puts ENV['PNETCDF_PATH']
-    ENV['PNETCDF_PATH'] = "/usr/local"
-    puts ENV['FC']
-    ENV['FC'] = "ifort"
-    puts ENV['CC']
-    ENV['CC'] = #{ENV.cc}
-    puts ENV['MPIF90']
-    ENV['MPIF90'] = "/usr/local/bin/mpif90"
-    puts ENV['MPICC']
-    ENV['MPICC'] = "/usr/local/bin/mpicc"
-    puts ENV['FC']
-    ENV['FC'] = "/usr/local/bin/mpif90"
+    #puts ENV['NETCDF_PATH']
+    #ENV['NETCDF_PATH'] = "/usr/local"
+    #puts ENV['PNETCDF_PATH']
+    #ENV['PNETCDF_PATH'] = "/usr/local"
+    #puts ENV['FC']
+    #ENV['FC'] = "ifort"
+    #puts ENV['CC']
+    #ENV['CC'] = #{ENV.cc}
+    #puts ENV['MPIF77']
+    #ENV['MPIF77'] = "/usr/local/bin/mpif77"
+    #puts ENV['MPIF90']
+    #ENV['MPIF90'] = "/usr/local/bin/mpif90"
+    #puts ENV['MPICC']
+    #ENV['MPICC'] = "/usr/local/bin/mpicc"
     Dir.chdir("pio") do
       system "./configure", "--disable-debug",
         "--prefix=#{prefix}"
