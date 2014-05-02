@@ -106,16 +106,16 @@ if [ $platform == 'macosx' ]; then  #{{{
   export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 
-  export PYTHONDIR=/Library/Frameworks/Python.framework/Versions/2.7/bin
-  export PYTHONPATH=$PYTHONPATH:/Library/Frameworks/Python.framework/Versions/2.7/bin
-  #export PYTHONPATH=$PYTHONPATH:/Users/pwolfram/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages
-  export PYTHONPATH=$PYTHONPATH:/Applications/Canopy.app/appdata/canopy-1.0.1.1189.macosx-x86_64/Canopy.app/Contents/lib/python2.7/site-packages
-  
-  export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+  #export PYTHONDIR=/Library/Frameworks/Python.framework/Versions/2.7/bin
+  #export PYTHONPATH=$PYTHONPATH:/Library/Frameworks/Python.framework/Versions/2.7/bin
+  ##export PYTHONPATH=$PYTHONPATH:/Users/pwolfram/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages
+  #export PYTHONPATH=$PYTHONPATH:/Applications/Canopy.app/appdata/canopy-1.0.1.1189.macosx-x86_64/Canopy.app/Contents/lib/python2.7/site-packages
+  #
+  #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
   
   # Added by Canopy installer on 2014-01-10
   # VIRTUAL_ENV_DISABLE_PROMPT can be set to '' to make bashprompt show that Canopy is active, otherwise 1
-  #export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate
+  export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate
   alias python-epd="bash -c ' export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate; python '"
   alias ipython-epd="bash -c ' export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate; ipython '"
 
@@ -124,24 +124,31 @@ if [ $platform == 'macosx' ]; then  #{{{
   
   #export PATH=~/Documents/MPAS:usr/texbin:$PATH
   export PATH=usr/texbin:$PATH
-  export http_proxy=http://proxyout.lanl.gov:8080
-  export https_proxy=https://proxyout.lanl.gov:8080
-  export all_proxy=proxy.lanl.gov:8080
-  #export ftp_proxy="http://proxyout.lanl.gov"
-  export no_proxy="*.lanl.gov"
+  #export http_proxy=http://proxyout.lanl.gov:8080
+  #export https_proxy=https://proxyout.lanl.gov:8080
+  #export all_proxy=proxy.lanl.gov:8080
+  ##export ftp_proxy="http://proxyout.lanl.gov"
+  #export no_proxy="*.lanl.gov"
 
   alias xdvi='xdvik -geometry 1200x1445+1360+0 -s 5'
+  alias gidb='ddd --debugger "/usr/bin/idb"'
 
 
   # MPAS variables
-  export NETCDF=/usr/local/
-  export PNETCDF=/usr/local/
-  export PIO=/usr/local/
+  export NETCDF=/opt/netcdf-4.1.3/
+  export PNETCDF=/opt/parallel-netcdf-1.4.1/
+  export PIO=/opt/pio-1.7.1/
+
+  alias updatedb="sudo /usr/libexec/locate.updatedb"
 
   #generalized colors
   source "`brew --prefix grc`/etc/grc.bashrc"
 
+  # alias for installed, native OS X applications
   alias skim='/Applications/Skim.app/Contents/MacOS/Skim'
+  alias lyx='/Applications/LyX.app/Contents/MacOS/lyx NotesSomaRadiallyConst.lyx'
   # make sure MacOSX inherits correct variables for launcher
   #launchtcl setenv PATH $PATH
+
+  source /opt/intel/composer_xe_2013_sp1.2.139/bin/compilervars.sh intel64
 fi #}}}

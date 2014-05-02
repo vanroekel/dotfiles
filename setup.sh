@@ -112,6 +112,7 @@ ln -s ${PWD}/vim/scripts.vim ~/.vim/scripts.vim
 ###### MAC OSX Specifics ####################
 # install osx-trash if on macosx
 if [ `uname` == 'Darwin' ]; then 
+  # http://superuser.com/questions/694433/install-gem-for-older-ruby-1-8-on-mac-os-x-10-9-maverics
   sudo gem install osx-trash
   brew install ack
 fi
