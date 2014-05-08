@@ -126,6 +126,7 @@ noremap <F5> :set hlsearch! hlsearch?<CR>
 noremap <F6> :RainbowParenthesesToggleAll<CR>
 noremap <F7> :syntax on<CR>
 noremap <F8> :Tlist<CR>
+noremap <F9> :TagbarToggle<CR>
 "noremap <F9> source /home/pwolfram/.vim/plugin/python_fold.vim<CR>
 syntax on
 "}}}
