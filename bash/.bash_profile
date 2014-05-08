@@ -151,4 +151,6 @@ if [ $platform == 'macosx' ]; then  #{{{
   #launchtcl setenv PATH $PATH
 
   source /opt/intel/composer_xe_2013_sp1.2.139/bin/compilervars.sh intel64
+
+  alias gvim='mvim'
 fi #}}}
