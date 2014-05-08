@@ -2,7 +2,8 @@ set term=xterm-256color
 
 " Setup {{{
 source ~/.vimrc.bundles
-filetype plugin on
+filetype plugin indent on
+"filetype plugin on
 syntax on
 execute pathogen#infect('local/{}')
 "}}}
@@ -137,8 +138,8 @@ set wildmenu
 
 
 " Bundle {{{
-nnoremap <leader>bc :BundleClean<CR>
-nnoremap <leader>bi :BundleInstall!<CR>
+nnoremap <leader>bc :PluginClean<CR>
+nnoremap <leader>bi :PluginInstall!<CR>
 "}}}
 
 " take care of white space for diffs {{{ 

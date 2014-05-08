@@ -1,75 +1,76 @@
 "vim: foldmethod=marker
  
-" Bundles
+" Plugins
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'git@github.com:gmarik/vundle'
-Bundle 'git@github.com:MarcWeber/vim-addon-mw-utils'
-Bundle 'git@github.com:tomtom/tlib_vim'
+"Plugin 'git@github.com:gmarik/vundle'
+Plugin 'git@github.com:gmarik/Vundle.vim'
+Plugin 'git@github.com:MarcWeber/vim-addon-mw-utils'
+Plugin 'git@github.com:tomtom/tlib_vim'
 if executable('ack-grep')
 	let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-	Bundle 'git@github.com:mileszs/ack.vim'
+	Plugin 'git@github.com:mileszs/ack.vim'
 elseif executable('ack')
-	Bundle 'git@github.com:mileszs/ack.vim'
+	Plugin 'git@github.com:mileszs/ack.vim'
 elseif executable('ag')
-	Bundle 'git@github.com:mileszs/ack.vim'
+	Plugin 'git@github.com:mileszs/ack.vim'
 	let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
 
-Bundle 'git@github.com:scrooloose/nerdtree'
-Bundle 'git@github.com:kien/ctrlp.vim'
-Bundle 'git@github.com:vim-scripts/sessionman.vim'
+Plugin 'git@github.com:scrooloose/nerdtree'
+Plugin 'git@github.com:kien/ctrlp.vim'
+Plugin 'git@github.com:vim-scripts/sessionman.vim'
 
-Bundle 'git@github.com:jistr/vim-nerdtree-tabs'
-Bundle 'git@github.com:mbbill/undotree'
-Bundle 'git@github.com:airblade/vim-gitgutter'
-Bundle 'git@github.com:tpope/vim-fugitive'
-Bundle 'git@github.com:tpope/vim-abolish.git'
-Bundle 'git@github.com:mattn/gist-vim'
-Bundle 'git@github.com:scrooloose/nerdcommenter'
-Bundle 'git@github.com:godlygeek/tabular'
+Plugin 'git@github.com:jistr/vim-nerdtree-tabs'
+Plugin 'git@github.com:mbbill/undotree'
+Plugin 'git@github.com:airblade/vim-gitgutter'
+Plugin 'git@github.com:tpope/vim-fugitive'
+Plugin 'git@github.com:tpope/vim-abolish.git'
+Plugin 'git@github.com:mattn/gist-vim'
+Plugin 'git@github.com:scrooloose/nerdcommenter'
+Plugin 'git@github.com:godlygeek/tabular'
 " note must run ctags -R in cod'es top level src directory to 
 " generate the tags throughout all the files for best effect
 if executable('ctags')
-    Bundle 'git@github.com:majutsushi/tagbar'
+    Plugin 'git@github.com:majutsushi/tagbar'
     " http://www.thegeekstuff.com/2009/04/ctags-taglist-vi-vim-editor-as-sourece-code-browser/
 endif
-"Bundle 'git@github.com:Shougo/neocomplcache'
-Bundle 'git@github.com:tpope/vim-pathogen'
-"Bundle 'git@github.com:klen/python-mode'
-Bundle 'git@github.com:pwolfram/python-mode'
-Bundle 'git@github.com:pwolfram/python.vim.git'
-Bundle 'git@github.com:vim-scripts/python_match.vim.git'
-Bundle 'git@github.com:vim-scripts/pythoncomplete.git'
+"Plugin 'git@github.com:Shougo/neocomplcache'
+Plugin 'git@github.com:tpope/vim-pathogen'
+"Plugin 'git@github.com:klen/python-mode'
+Plugin 'git@github.com:pwolfram/python-mode'
+Plugin 'git@github.com:pwolfram/python.vim.git'
+Plugin 'git@github.com:vim-scripts/python_match.vim.git'
+"Plugin 'git@github.com:vim-scripts/pythoncomplete.git'
 " git@github.com:gotcha/vimpdb.git just install with pip or easy_install
 
-Bundle 'git@github.com:vim-scripts/taglist.vim.git'
+Plugin 'git@github.com:vim-scripts/taglist.vim.git'
 
-Bundle 'git@github.com:douglasjacobsen/vim-bufexplorer.git'
+Plugin 'git@github.com:douglasjacobsen/vim-bufexplorer.git'
 
-Bundle 'git@github.com:mattn/webapi-vim'
+Plugin 'git@github.com:mattn/webapi-vim'
 
-"Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
-Bundle 'git@github.com:pwolfram/vim-latex.git'
+"Plugin 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+Plugin 'git@github.com:pwolfram/vim-latex.git'
 
-Bundle 'git@github.com:pwolfram/rainbow_parentheses.vim.git'
+Plugin 'git@github.com:pwolfram/rainbow_parentheses.vim.git'
 
-Bundle 'git@github.com:tsaleh/vim-matchit.git'
+"Plugin 'git@github.com:tsaleh/vim-matchit.git'
+Plugin 'git@github.com:tmhedberg/matchit.git'
 
-Bundle 'git@github.com:sukima/xmledit.git'
+Plugin 'git@github.com:sukima/xmledit.git'
 
-Bundle 'git@github.com:pwolfram/fortran.vim.git'
+Plugin 'git@github.com:pwolfram/fortran.vim.git'
 
-" makes Ack command available in vim, must brew install ack though...
-Bundle 'git@github.com:mileszs/ack.vim.git'
+Plugin 'git://github.com/altercation/vim-colors-solarized.git'
+Plugin 'git@github.com:flazz/vim-colorschemes.git'
+Plugin 'git@github.com:tomasr/molokai.git'
+Plugin 'git@github.com:chriskempson/vim-tomorrow-theme.git'
 
-Bundle 'git://github.com/altercation/vim-colors-solarized.git'
-Bundle 'git@github.com:flazz/vim-colorschemes.git'
-Bundle 'git@github.com:tomasr/molokai.git'
-Bundle 'git@github.com:chriskempson/vim-tomorrow-theme.git'
+Plugin 'git@github.com:vim-scripts/AnsiEsc.vim.git'
 
-Bundle 'git@github.com:vim-scripts/AnsiEsc.vim.git'
+call vundle#end()
