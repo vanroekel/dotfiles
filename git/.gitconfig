@@ -25,9 +25,13 @@
 	rb = rebase
 	rc = rebase --continue
 	rd = !git ls-files -d | xargs git checkout --
-	path-br = "!bash -xc \"git checkout -b \"${PWD#${PWD%/*/*}/}\" MPAS-Dev/MPAS/develop\""
+  path-br = "!bash -xc \"git checkout -b \"${PWD#${PWD%/*/*}/}\" MPAS-Dev/MPAS/develop\""
+  g = grep --break --heading --line-number
 [diff]
   tool = vimdiff
+[grep]
+  extendRegexp = true
+  lineNumber = true
 [color]
 	ui = true
 [merge]
@@ -38,7 +42,8 @@
 [push]
 	default = current
 [http]
-	proxy = http://proxyout.lanl.gov:8080
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
+[http]
+	proxy = http://proxyout.lanl.gov:8080
