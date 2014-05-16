@@ -250,18 +250,20 @@ set background=dark
 "
 "latex concealment {{{
 "http://b4winckler.wordpress.com/2010/08/07/using-the-conceal-vim-feature-with-latex/
-set cole=2
-let g:tex_conceal= 'abdgms'
-" decent value for vim concealment
-"setlocal conceallevel=2
-highlight Conceal ctermbg=black ctermfg=white 
-highlight Conceal guifg=white guibg=black 
-"let g:tex_conceal = ""
-"
-"        a = accents/ligatures
-"        b = bold and italic
-"        d = delimiters
-"        m = math symbols
-"        g = Greek
-"        s = superscripts/subscripts
+if has('conceal') 
+  set cole=2
+  let g:tex_conceal= 'abdgms'
+  " decent value for vim concealment
+  "setlocal conceallevel=2
+  highlight Conceal ctermbg=black ctermfg=white 
+  highlight Conceal guifg=white guibg=black 
+  "let g:tex_conceal = ""
+  "
+  "        a = accents/ligatures
+  "        b = bold and italic
+  "        d = delimiters
+  "        m = math symbols
+  "        g = Greek
+  "        s = superscripts/subscripts
+endif
 "}}}
