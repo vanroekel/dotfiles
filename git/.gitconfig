@@ -33,10 +33,11 @@
   extendRegexp = true
   lineNumber = true
 [color]
-	ui = true
-[merge]
-	tool = vimdiff
-	summary = true
+  ui = true
+# use Apple's merge tool if commented
+#[merge]
+#	tool = vimdiff
+#	summary = true
 [github]
 	user = pwolfram
 [push]
@@ -47,3 +48,5 @@
 	smudge = git-media-smudge %f
 [http]
 	proxy = http://proxyout.lanl.gov:8080
+[rerere]
+	enabled = 1
