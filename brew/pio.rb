@@ -30,7 +30,7 @@ class Pio < Formula
       system "./configure", "--disable-debug",
         "--prefix=#{prefix}"
       system "make"
-      system "make", "install" 
+      system "make install"
     end
     Dir.chdir("testpio") do
       system "make"

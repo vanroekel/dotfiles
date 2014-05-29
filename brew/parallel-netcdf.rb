@@ -9,18 +9,19 @@ class ParallelNetcdf < Formula
   depends_on "netcdf" => "enable-fortran"
 
   def install
-    puts ENV['FC']
-    ENV['FC'] = "ifort"
-    puts ENV['CC']
-    ENV['CC'] = #{ENV.cc}
-    puts ENV['MPIF77']
+    ENV.deparallelize  # if your formula fails when building in parallel
+    #puts ENV['FC']
+    #ENV['FC'] = "ifort"
+    ENV['FC'] = "/usr/local/bin/gfortran"
+    ENV['CC'] = "/usr/bin/gcc"
     ENV['MPIF77'] = "/usr/local/bin/mpif77"
-    puts ENV['MPIF90']
     ENV['MPIF90'] = "/usr/local/bin/mpif90"
-    puts ENV['MPICC']
     ENV['MPICC'] = "/usr/local/bin/mpicc"
+    puts ENV['CC']
     puts ENV['FC']
-    ENV['FC'] = "ifort"
+    puts ENV['MPICC']
+    puts ENV['MPIF77']
+    puts ENV['MPIF90']
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
