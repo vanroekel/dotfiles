@@ -218,7 +218,7 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " spelling {{{
 set spelllang=en
-set spellfile=~/.vim/bundle/vundle/spell/en.utf-8.add
+set spellfile=~/.vim/bundle/Vundle.vim/spell/en.utf-8.add
 "}}}
 
 "tabs {{{
