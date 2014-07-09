@@ -78,6 +78,8 @@ if [ $platform == 'nix' ]; then #{{{
   #git clone git@github.com:Homebrew/linuxbrew.git ~/.linuxbrew
   export PATH="/users/pwolfram:/turquoise/users/pwolfram:$HOME/.linuxbrew/bin:$PATH"
   export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
+  alias pv="/usr/projects/climate/mpeterse/software/ParaView-4.1.0-RC2-Linux-64bit/bin/paraview"
+
 fi  #}}}
 
 if [ $platform == 'macosx' ]; then  #{{{
