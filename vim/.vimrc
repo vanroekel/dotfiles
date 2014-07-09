@@ -189,6 +189,9 @@ set sw=2
 " type in \ref{fig: and press <C-n> you will automatically cycle through
 " all the figure labels. Very useful!
 set iskeyword+=:
+
+" skim / mvim integration
+autocmd FileType tex call Tex_SetTeXCompilerTarget('View','pdf')
 "}}}
 
 " shell setup {{{
@@ -215,7 +218,7 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " spelling {{{
 set spelllang=en
-set spellfile=~/.vim/bundle/vundle/spell/en.utf-8.add
+set spellfile=~/.vim/bundle/Vundle.vim/spell/en.utf-8.add
 "}}}
 
 "tabs {{{

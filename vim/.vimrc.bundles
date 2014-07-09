@@ -41,8 +41,8 @@ if executable('ctags')
 endif
 "Plugin 'git@github.com:Shougo/neocomplcache'
 Plugin 'git@github.com:tpope/vim-pathogen'
-Plugin 'git@github.com:pwolfram/python-mode'
-Plugin 'git@github.com:pwolfram/python.vim.git'
+"Plugin 'git@github.com:pwolfram/python-mode'
+"Plugin 'git@github.com:pwolfram/python.vim.git'
 Plugin 'git@github.com:vim-scripts/python_match.vim.git'
 "Plugin 'git@github.com:klen/python-mode'
 "Plugin 'git@github.com:vim-scripts/pythoncomplete.git'

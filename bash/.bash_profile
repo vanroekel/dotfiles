@@ -107,6 +107,9 @@ if [ $platform == 'macosx' ]; then  #{{{
 
   export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
+  # flags necessary for development on OS X (Mavericks)
+  export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
+  export MPACOSX_DEPLOYMENT_TARGET=10.9
 
   #export PYTHONDIR=/Library/Frameworks/Python.framework/Versions/2.7/bin
   #export PYTHONPATH=$PYTHONPATH:/Library/Frameworks/Python.framework/Versions/2.7/bin
@@ -137,9 +140,12 @@ if [ $platform == 'macosx' ]; then  #{{{
 
 
   # MPAS variables
-  export NETCDF=/opt/netcdf-4.1.3/
-  export PNETCDF=/opt/parallel-netcdf-1.4.1/
-  export PIO=/opt/pio-1.7.1/
+  #export NETCDF=/opt/netcdf-4.1.3/
+  #export PNETCDF=/opt/parallel-netcdf-1.4.1/
+  #export PIO=/opt/pio-1.7.1/
+  export NETCDF=/usr/local/Cellar/netcdf/4.3.1.1/
+  export PNETCDF=/usr/local/Cellar/parallel-netcdf/1.4.1/
+  export PIO=/usr/local/Cellar/pio/1.7.2/
 
   alias updatedb="sudo /usr/libexec/locate.updatedb"
 
@@ -152,7 +158,8 @@ if [ $platform == 'macosx' ]; then  #{{{
   # make sure MacOSX inherits correct variables for launcher
   #launchtcl setenv PATH $PATH
 
-  source /opt/intel/composer_xe_2013_sp1.2.139/bin/compilervars.sh intel64
+  #source /opt/intel/composer_xe_2013.5.198/bin/compilervars.sh intel64
 
   alias gvim='mvim'
+  alias xdvi='/usr/local/texlive/2013/bin/universal-darwin/xdvi'
 fi #}}}

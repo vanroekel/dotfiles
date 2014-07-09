@@ -41,3 +41,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # rsync to act like scp
 alias rsync-scp='rsync -avzP'
+
+# lanl ICC
+alias sshMustang='ssh -t -X wtrw.lanl.gov ssh mu-fe.lanl.gov'
