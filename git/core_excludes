@@ -5,3 +5,7 @@
 *.out
 *.err
 *.bbl
+*.orig
+.DS_Store
+tags
+.ropeproject/
