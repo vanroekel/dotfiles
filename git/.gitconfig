@@ -27,6 +27,8 @@
 	rd = !git ls-files -d | xargs git checkout --
   path-br = "!bash -xc \"git checkout -b \"${PWD#${PWD%/*/*}/}\" MPAS-Dev/MPAS/develop\""
   g = grep --break --heading --line-number
+  # http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html
+	ctags = !.git/hooks/ctags
 [diff]
   tool = vimdiff
 [grep]
@@ -50,3 +52,5 @@
 	proxy = http://proxyout.lanl.gov:8080
 [rerere]
 	enabled = 1
+[init]
+	templatedir = ~/.git_template

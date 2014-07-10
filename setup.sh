@@ -62,6 +62,11 @@ if [ -f ~/.git_core_excludes ]; then
     mv ~/.git_core_excludes ~/gitBackup/.
 fi
 
+if [ -f ~/.git_template ]; then
+  mkdir -p ~/.git_template
+  mv git/hooks ~/.git_template/hooks
+fi 
+
 git clone ${VUNDLE_ADDR} ~/.vim/bundle/Vundle.vim
 git clone ${BASH_IT_ADDR} ~/.bash_it
 

@@ -18,5 +18,7 @@ done
 mkdir -p ~/scripts
 cp -R scripts/* ~/scripts/.
 
+cp -r git/hooks ~/.git_template/hooks
+
 # update bundles
 vim -u ~/.vimrc.bundles +BundleInstall +q
