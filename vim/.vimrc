@@ -52,6 +52,13 @@ execute pathogen#infect('local/{}')
 	com! -nargs=+ UnBundle
 		\ call UnBundle(<args>)
 " }}}
+"
+" easy tags {{{
+" ensure it checks the project specific tags file
+let g:easytags_dynamic_files = 1
+" configure easytags to run ctags after saving the buffer
+let g:easytags_events = ['BufWritePost']
+" }}}
 
 " Initialize NERDTree as needed {{{
 	function! NERDTreeInitAsNeeded()
