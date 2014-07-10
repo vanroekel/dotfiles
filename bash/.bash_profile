@@ -153,6 +153,7 @@ if [ $platform == 'macosx' ]; then  #{{{
   # alias for installed, native OS X applications
   alias skim='/Applications/Skim.app/Contents/MacOS/Skim'
   alias lyx='/Applications/LyX.app/Contents/MacOS/lyx NotesSomaRadiallyConst.lyx'
+  alias matlab='/Applications/MATLAB_R2014a.app/bin/matlab -nodesktop'
   # make sure MacOSX inherits correct variables for launcher
   #launchtcl setenv PATH $PATH
 
