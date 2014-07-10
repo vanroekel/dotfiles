@@ -62,7 +62,7 @@ if [ -f ~/.git_core_excludes ]; then
     mv ~/.git_core_excludes ~/gitBackup/.
 fi
 
-git clone ${VUNDLE_ADDR} ~/.vim/bundle/vundle
+git clone ${VUNDLE_ADDR} ~/.vim/bundle/Vundle.vim
 git clone ${BASH_IT_ADDR} ~/.bash_it
 
 ~/.bash_it/install.sh
@@ -79,10 +79,10 @@ do
 done
 
 ln -s ${PWD}/vim/.vimrc ~/.vimrc
-if [ ! -d ~/.vim/bundle/vundle/spell ]; then
-  mkdir ~/.vim/bundle/vundle/spell
+if [ ! -d ~/.vim/bundle/Vundle.vim/spell ]; then
+  mkdir ~/.vim/bundle/Vundle.vim/spell
 fi
-ln -s ${PWD}/vim/.vimspell.en.utf-8.add ~/.vim/bundle/vundle/spell/en.utf-8.add
+ln -s ${PWD}/vim/.vimspell.en.utf-8.add ~/.vim/bundle/Vundle.vim/spell/en.utf-8.add
 ln -s ${PWD}/vim/.gvimrc ~/.gvimrc
 ln -s ${PWD}/vim/.vimrc.bundles ~/.vimrc.bundles
 ln -s ${PWD}/tmux/.tmux.conf ~/.tmux.conf
