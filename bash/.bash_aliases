@@ -44,3 +44,6 @@ alias rsync-scp='rsync -avzP'
 
 # lanl ICC
 alias sshMustang='ssh -t -X wtrw.lanl.gov ssh mu-fe.lanl.gov'
+
+alias julia='/Applications/Julia-0.3.1.app/Contents/Resources/julia/bin/julia'
+alias ijulia="ipython notebook --profile julia"
