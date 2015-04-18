@@ -7,7 +7,13 @@ filetype plugin indent on
 syntax on
 execute pathogen#infect('local/{}')
 "}}}
-
+" custom leaders (non-specific) "{{{ 
+map <Leader>bp :call InsertLine()<CR>
+function! InsertLine()
+  let trace = expand("import pdb; pdb.set_trace()")
+  execute "normal o".trace
+endfunction
+"}}}
 " Fugitive {{{
 	nnoremap <silent> <leader>gs :Gstatus<CR>
 	nnoremap <silent> <leader>gd :Gdiff<CR>
