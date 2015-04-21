@@ -105,6 +105,9 @@ ln -s ${PWD}/git/core_excludes ~/.git_core_excludes
 ln -s ${PWD}/pdb/.pdbrc ~/.pdbrc
 
 ln -s ${PWD}/Xterm/.Xdefaults ~/.Xdefaults
+# merge results into default xterm settings
+xrdb -merge Xterm/.Xdefaults
+xrdb -merge Xterm/solarized
 
 #git config --global core.excludesfile "${PWD}/git/core_excludes"
 
