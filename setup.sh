@@ -104,6 +104,8 @@ ln -s ${PWD}/git/core_excludes ~/.git_core_excludes
 
 ln -s ${PWD}/pdb/.pdbrc ~/.pdbrc
 
+ln -s ${PWD}/Xterm/.Xdefaults ~/.Xdefaults
+
 #git config --global core.excludesfile "${PWD}/git/core_excludes"
 
 mkdir -p ~/scripts
