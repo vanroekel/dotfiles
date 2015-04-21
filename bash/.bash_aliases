@@ -43,7 +43,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias rsync-scp='rsync -avzP'
 
 # lanl ICC
-alias sshMustang='ssh -t -X wtrw.lanl.gov ssh mu-fe.lanl.gov'
+alias sshMustang='ssh -t -X wtrw1.lanl.gov ssh mu-fe.lanl.gov'
 
 alias julia='/Applications/Julia-0.3.1.app/Contents/Resources/julia/bin/julia'
 alias ijulia="ipython notebook --profile julia"
+
+alias objcopy="/usr/local/Cellar/binutils/2.24/bin/gobjcopy"
+alias objdump="/usr/local/Cellar/binutils/2.24/bin/gobjdump"
