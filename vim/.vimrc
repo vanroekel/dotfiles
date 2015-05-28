@@ -8,6 +8,7 @@ syntax on
 execute pathogen#infect('local/{}')
 "}}}
 " custom leaders (non-specific) "{{{ 
+map <Leader>e :execute getline(".")<CR>
 map <Leader>bp :call InsertLine()<CR>
 function! InsertLine()
   let trace = expand("import pdb; pdb.set_trace()")
