@@ -15,6 +15,25 @@ function! InsertLine()
   execute "normal o".trace
 endfunction
 "}}}
+"{{{ Git grep
+func GitGrep(...)
+  let save = &grepprg
+  set grepprg=git\ grep\ -n\ $*
+  let s = 'grep'
+  for i in a:000
+    let s = s . ' ' . i
+  endfor
+  exe s
+  let &grepprg = save
+endfun
+command -nargs=? G call GitGrep(<f-args>)
+func GitGrepWord()
+  normal! "zyiw
+  call GitGrep('-w -e ', getreg('z'))
+endf
+nmap <Leader>gr :call GitGrepWord()<CR>
+" use :cn and :cp to move through found words
+"}}}
 " Fugitive {{{
 	nnoremap <silent> <leader>gs :Gstatus<CR>
 	nnoremap <silent> <leader>gd :Gdiff<CR>
