@@ -261,6 +261,10 @@ nnoremap <silent> <leader>tl :tablast<CR>
 nnoremap <silent> <leader>tf :tabfirst<CR>
 "}}}
 
+"code cleanup {{{
+nnoremap <leader>fw :%s/ \+$//g<CR>
+"}}}
+
 "xml syntax folding {{{
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
