@@ -1,5 +1,5 @@
 #!/bin/bash
-BASH_IT_ADDR="git@github.com:douglasjacobsen/bash-it.git"
+BASH_IT_ADDR="git@github.com:pwolfram/bash-it.git"
 VUNDLE_ADDR="git@github.com:gmarik/vundle.git"
 
 if [ -f ~/.vim ]; then
@@ -72,10 +72,10 @@ git clone ${BASH_IT_ADDR} ~/.bash_it
 
 ~/.bash_it/install.sh
 
-ln -s ${PWD}/bash/.bashrc ~/.bashrc
+ln -sf ${PWD}/bash/.bashrc ~/.bashrc
 ln -sf ${PWD}/bash/.bash_profile ~/.bash_profile
-ln -s ${PWD}/bash/.bash_aliases ~/.bash_aliases
-ln -s ${PWD}/tcsh/.login ~/.login
+ln -sf ${PWD}/bash/.bash_aliases ~/.bash_aliases
+ln -sf ${PWD}/tcsh/.login ~/.login
 
 CUSTOM_FILES=`ls bash-it-custom/`
 for FILE in ${CUSTOM_FILES}
@@ -86,6 +86,9 @@ done
 ln -s ${PWD}/vim/.vimrc ~/.vimrc
 if [ ! -d ~/.vim/bundle/Vundle.vim/spell ]; then
   mkdir ~/.vim/bundle/Vundle.vim/spell
+fi
+if [ ! -d ~/.vim/undodir ]; then
+  mkdir ~/.vim/undodir
 fi
 ln -s ${PWD}/vim/.vimspell.en.utf-8.add ~/.vim/bundle/Vundle.vim/spell/en.utf-8.add
 ln -s ${PWD}/vim/.gvimrc ~/.gvimrc
