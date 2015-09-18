@@ -49,7 +49,7 @@
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [http]
-	proxy = http://proxyout.lanl.gov:8080
+	proxy = 
 [rerere]
 	enabled = 1
 [init]

@@ -120,13 +120,13 @@ if [ $platform == 'macosx' ]; then  #{{{
   #export PYTHONPATH=$PYTHONPATH:/Applications/Canopy.app/appdata/canopy-1.0.1.1189.macosx-x86_64/Canopy.app/Contents/lib/python2.7/site-packages
   #
   #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-  export PYTHONPATH=/users/pwolfram/Documents/MPAS-pwolfram_fork/src/core_ocean/analysis_members/:/users/pwolfram/Documents/MPAS-pwolfram_fork/src/core_ocean/analysis_members/gaussian_interp/:/users/pwolfram/Documents/MPAS-pwolfram_fork/src/core_ocean/analysis_members/diffusivity_analysis/:$PYTHONPATH
+  #export PYTHONPATH=/users/pwolfram/Documents/MPAS-pwolfram_fork/src/core_ocean/analysis_members/:/users/pwolfram/Documents/MPAS-pwolfram_fork/src/core_ocean/analysis_members/gaussian_interp/:/users/pwolfram/Documents/MPAS-pwolfram_fork/src/core_ocean/analysis_members/diffusivity_analysis/:$PYTHONPATH
   
   # Added by Canopy installer on 2014-01-10
   # VIRTUAL_ENV_DISABLE_PROMPT can be set to '' to make bashprompt show that Canopy is active, otherwise 1
-  export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate
-  alias python-epd="bash -c ' export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate; python '"
-  alias ipython-epd="bash -c ' export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate; ipython '"
+  #export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate
+  #alias python-epd="bash -c ' export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate; python '"
+  #alias ipython-epd="bash -c ' export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate; ipython '"
   #alias kernprof='python /Users/pwolfram/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages/kernprof.py'
 
   # git completion 
@@ -169,3 +169,7 @@ if [ $platform == 'macosx' ]; then  #{{{
   alias gvim='mvim'
   alias xdvi='/usr/local/texlive/2013/bin/universal-darwin/xdvi'
 fi #}}}
+
+# added by Anaconda 2.3.0 installer
+export PATH="/Users/ftuser/anaconda/bin:$PATH"
+source $(brew --prefix)/etc/bash_completion
