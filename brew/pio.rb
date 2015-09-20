@@ -6,29 +6,25 @@ class Pio < Formula
   #sha1 "44285d4b15cbd88d57f76c71fb38565b0cbc40a0"
   url 'http://parallelio.googlecode.com/svn/trunk_tags/pio1_7_2/', :using => :svn
 
-  depends_on :x11 # if your formula requires any X11/XQuartz components
-  depends_on "open-mpi"
-  depends_on "parallel-netcdf" 
+  #depends_on :x11 # if your formula requires any X11/XQuartz components
+  #depends_on "open-mpi"
+  #depends_on "parallel-netcdf" 
 
   def install
     ENV.deparallelize  # if your formula fails when building in parallel
-    #puts ENV['NETCDF_PATH']
-    #ENV['NETCDF_PATH'] = "/usr/local"
-    #puts ENV['PNETCDF_PATH']
-    #ENV['PNETCDF_PATH'] = "/usr/local"
-    #puts ENV['FC']
-    #ENV['FC'] = "ifort"
-    #puts ENV['CC']
-    #ENV['CC'] = #{ENV.cc}
-    #puts ENV['MPIF77']
-    #ENV['MPIF77'] = "/usr/local/bin/mpif77"
-    #puts ENV['MPIF90']
-    #ENV['MPIF90'] = "/usr/local/bin/mpif90"
-    #puts ENV['MPICC']
-    #ENV['MPICC'] = "/usr/local/bin/mpicc"
+    ENV['NETCDF_PATH'] = "/usr/local"
+    ENV['PNETCDF_PATH'] = "/usr/local"
+    ENV['FC'] = "/usr/local/bin/gfortran"
+    ENV['CC'] = #{ENV.cc}
+    ENV['MPIFC'] = "/usr/local/bin/mpif90"
+    puts ENV['PNETCDF_PATH']
+    puts ENV['FC']
+    puts ENV['CC']
+    puts ENV['MPIFC']
+    puts ENV['MPICC']
+    puts ENV['NETCDF_PATH']
     Dir.chdir("pio") do
-      system "./configure", "--disable-debug",
-        "--prefix=#{prefix}"
+      system "./configure", "--prefix=#{prefix}"
       system "make"
       system "make install"
     end
