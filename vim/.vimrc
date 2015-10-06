@@ -279,9 +279,9 @@ syntax enable
 "colorscheme molokai
 
 "let g:solarized_termcolors=256
-"let g:solarized_termtrans=1
-"colorscheme solarized
-"set background=dark
+let g:solarized_termtrans=1
+colorscheme solarized
+set background=dark
 ""colorscheme slate
 "}}}
 "
