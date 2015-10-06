@@ -1,5 +1,5 @@
 [user]
-	name = Phillip Wolfram
+	name = Phillip J. Wolfram
 	email = pwolfram@lanl.gov
 [core]
 	editor = vim
@@ -37,9 +37,9 @@
 [color]
   ui = true
 # use Apple's merge tool if commented
-#[merge]
-#	tool = vimdiff
-#	summary = true
+[merge]
+	tool = vimdiff
+	summary = true
 [github]
 	user = pwolfram
 [push]
