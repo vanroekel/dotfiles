@@ -50,3 +50,5 @@ alias ijulia="ipython notebook --profile julia"
 
 alias objcopy="/usr/local/Cellar/binutils/2.24/bin/gobjcopy"
 alias objdump="/usr/local/Cellar/binutils/2.24/bin/gobjdump"
+
+alias dropboxwork="HOME=$HOME/Dropbox-work /Applications/Dropbox.app/Contents/MacOS/Dropbox &"
