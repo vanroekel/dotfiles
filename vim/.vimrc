@@ -7,6 +7,12 @@ filetype plugin indent on
 syntax on
 execute pathogen#infect('local/{}')
 "}}}
+
+" show tabs in vim "{{{
+set list
+set listchars=tab:▸\ 
+" }}}
+
 " custom leaders (non-specific) "{{{ 
 map <Leader>e :execute getline(".")<CR>
 map <Leader>bp :call InsertLine()<CR>
