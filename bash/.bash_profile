@@ -72,7 +72,7 @@ if [[ "$unamestr" == "Darwin" ]]; then
 else
   platform='nix'
 fi
-
+export PATH="$PATH:/Users/pwolfram/src/scrIpT/"
 if [ $platform == 'nix' ]; then #{{{
   # instsall homebrew for linux
   #git clone git@github.com:Homebrew/linuxbrew.git ~/.linuxbrew
@@ -124,9 +124,9 @@ if [ $platform == 'macosx' ]; then  #{{{
   
   # Added by Canopy installer on 2014-01-10
   # VIRTUAL_ENV_DISABLE_PROMPT can be set to '' to make bashprompt show that Canopy is active, otherwise 1
-  export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate
-  alias python-epd="bash -c ' export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate; python '"
-  alias ipython-epd="bash -c ' export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate; ipython '"
+  #export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate
+  #alias python-epd="bash -c ' export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate; python '"
+  #alias ipython-epd="bash -c ' export VIRTUAL_ENV_DISABLE_PROMPT=1; source /Users/pwolfram/Library/Enthought/Canopy_64bit/User/bin/activate; ipython '"
   #alias kernprof='python /Users/pwolfram/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages/kernprof.py'
 
   # git completion 
@@ -169,3 +169,7 @@ if [ $platform == 'macosx' ]; then  #{{{
   alias gvim='mvim'
   alias xdvi='/usr/local/texlive/2013/bin/universal-darwin/xdvi'
 fi #}}}
+
+# added by Anaconda2 2.4.0 installer
+#export PATH=$PATH:"/Users/pwolfram/anaconda/bin"
+export PATH="/usr/local/bin:/Users/pwolfram/anaconda/bin":$PATH
