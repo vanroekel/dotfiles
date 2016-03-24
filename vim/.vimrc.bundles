@@ -76,5 +76,6 @@ Plugin 'git@github.com:vim-scripts/AnsiEsc.vim.git'
 Plugin 'git@github.com:xolox/vim-easytags.git'
 Plugin 'git@github.com:xolox/vim-misc.git'
 Plugin 'git@github.com:AndrewRadev/linediff.vim.git'
-Plugin 'git@github.com:vim-scripts/delview.git'
+"Plugin 'git@github.com:vim-scripts/delview.git'
+Plugin 'git@github.com:scrooloose/syntastic.git'
 call vundle#end()

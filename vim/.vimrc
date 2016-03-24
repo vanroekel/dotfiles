@@ -150,8 +150,8 @@ set backspace+=indent,eol,start
 "}}}}
 
 " automatically save and load folds {{{
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
+"au BufWinLeave * silent! mkview
+"au BufWinEnter * silent! loadview
 set foldmethod=marker
 " }}} 
 
