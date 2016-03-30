@@ -26,7 +26,7 @@ class ParallelNetcdf < Formula
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
-    system "make", "install" 
+    system "make", "install"
 
     ## test libraries
     #Dir.chdir('test') do
