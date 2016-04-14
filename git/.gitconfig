@@ -54,3 +54,5 @@
 	enabled = 1
 [init]
 	templatedir = ~/.git_template
+[log]
+	date = local
