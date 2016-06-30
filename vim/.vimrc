@@ -10,10 +10,10 @@ execute pathogen#infect('local/{}')
 
 " show tabs in vim "{{{
 set list
-set listchars=tab:▸\ 
+set listchars=tab:▸\
 " }}}
 
-" custom leaders (non-specific) "{{{ 
+" custom leaders (non-specific) "{{{
 map <Leader>e :execute getline(".")<CR>
 map <Leader>bp :call InsertLine()<CR>
 function! InsertLine()
@@ -60,14 +60,14 @@ nmap <Leader>gr :call GitGrepWord()<CR>
   " with vim for this to work too.
 	let g:undotree_SetFocusWhenToggle=1
   if has('persistent_undo')
-    set undofile    
+    set undofile
     let vimDir = '$HOME/.vim'
     let myUndoDir = expand(vimDir . '/undodir/')
     let &runtimepath.=','.vimDir
     let &undodir = myUndoDir
     "call system('mkdir ' . myUndoDir)
     set undodir=~/.vim/undodir/
-    "set hidden  
+    "set hidden
     "echo &undofile
     "echo &undodir
     set undolevels=1000         " How many undos
@@ -137,23 +137,23 @@ set cursorline
 " }}}
 "set tabstop=4
 "set shiftwidth=4
-"set softtabstop=4 
+"set softtabstop=4
 set modeline
 set modelines=5
 set hlsearch
 set ignorecase
 set tabstop=2
 set shiftwidth=2
-set softtabstop=2 
+set softtabstop=2
 set expandtab
-set backspace+=indent,eol,start 
+set backspace+=indent,eol,start
 "}}}}
 
 " automatically save and load folds {{{
 "au BufWinLeave * silent! mkview
 "au BufWinEnter * silent! loadview
 set foldmethod=marker
-" }}} 
+" }}}
 
 " function key mappings {{{
 "set pastetoggle=<F3>
@@ -182,7 +182,7 @@ nnoremap <leader>bc :PluginClean<CR>
 nnoremap <leader>bi :PluginInstall!<CR>
 "}}}
 
-" take care of white space for diffs {{{ 
+" take care of white space for diffs {{{
 set diffopt+=iwhite
   set diffexpr=DiffW()
   function DiffW()
@@ -197,14 +197,14 @@ set diffopt+=iwhite
        \ v:fname_in . " " . v:fname_new .  " > " . v:fname_out
   endfunction
   "}}}
-  
+
 " vim-latex {{{
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse Latex-Suite. Set your grep
 " program to always generate a file-name.
 set grepprg=grep\ -nH\ $*
 
-" latex 
+" latex
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 " filetype plugin on
 
@@ -279,7 +279,7 @@ au FileType xsd setlocal foldmethod=syntax
 "}}}
 
 "colorscheme http://vimcolorschemetest.googlecode.com/svn/html/index-html.html{{{
-syntax enable 
+syntax enable
 "let g:molokai_original=1
 "let g:rehash256=1
 "set background=dark
@@ -294,13 +294,13 @@ set background=dark
 "
 "latex concealment {{{
 "http://b4winckler.wordpress.com/2010/08/07/using-the-conceal-vim-feature-with-latex/
-if has('conceal') 
+if has('conceal')
   set cole=2
   let g:tex_conceal= 'abdgms'
   " decent value for vim concealment
   "setlocal conceallevel=2
-  highlight Conceal ctermbg=black ctermfg=white 
-  highlight Conceal guifg=white guibg=black 
+  highlight Conceal ctermbg=black ctermfg=white
+  highlight Conceal guifg=white guibg=black
   "let g:tex_conceal = ""
   "
   "        a = accents/ligatures
