@@ -211,6 +211,7 @@ set grepprg=grep\ -nH\ $*
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
 " can be called correctly.
 set shellslash
+set shell=/bin/bash
 
 " OPTIONAL: This enables automatic indentation as you type.
 filetype indent on
