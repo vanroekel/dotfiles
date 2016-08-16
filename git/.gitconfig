@@ -46,7 +46,7 @@
 [github]
 	user = pwolfram
 [push]
-	default = current
+	default = nothing
 [http]
 [filter "media"]
 	clean = git-media-clean %f
