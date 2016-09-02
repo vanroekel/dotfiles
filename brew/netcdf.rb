@@ -9,14 +9,9 @@ class Netcdf < Formula
   depends_on 'hdf5'
 
   option 'enable-fortran', 'Compile Fortran bindings'
-  option 'disable-cxx', "Don't compile C++ bindings"
+  option 'disable-cxx-compat', "Don't compile C++ bindings"
   option 'enable-cxx-compat', 'Compile C++ bindings for compatibility'
   option 'without-check', 'Disable checks (not recommended)'
-
-  #resource 'cxx' do
-  #  url 'https://github.com/Unidata/netcdf-cxx4/archive/v4.2.1.tar.gz'
-  #  sha1 '0bb4a0807f10060f98745e789b6dc06deddf30ff'
-  #end
 
   resource 'cxx-compat' do
     url 'http://www.gfd-dennou.org/library/netcdf/unidata-mirror/netcdf-cxx-4.2.tar.gz'
@@ -68,13 +63,6 @@ class Netcdf < Formula
     ENV.prepend_path 'PATH', bin
     ENV.prepend 'CPPFLAGS', "-I#{include}"
     ENV.prepend 'LDFLAGS', "-L#{lib}"
-
-    resource('cxx').stage do
-      system './configure', *common_args
-      system 'make'
-      system 'make check' if build.with? 'check'
-      system 'make install'
-    end unless build.include? 'disable-cxx'
 
     resource('cxx-compat').stage do
       system './configure', *common_args
