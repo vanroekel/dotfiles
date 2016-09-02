@@ -2,9 +2,8 @@ require 'formula'
 
 class Netcdf < Formula
   homepage 'http://www.unidata.ucar.edu/software/netcdf'
-  url 'ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.3.1.1.tar.gz'
-  mirror 'http://www.gfd-dennou.org/library/netcdf/unidata-mirror/netcdf-4.3.1.1.tar.gz'
-  sha1 '6aed20fa906e4963017ce9d1591aab39d8a556e4'
+  url 'http://www.gfd-dennou.org/library/netcdf/unidata-mirror/netcdf-4.3.3.1.tar.gz'
+  sha256 'bdde3d8b0e48eed2948ead65f82c5cfb7590313bc32c4cf6c6546e4cea47ba19'
 
   depends_on :fortran if build.include? 'enable-fortran'
   depends_on 'hdf5'
@@ -14,19 +13,19 @@ class Netcdf < Formula
   option 'enable-cxx-compat', 'Compile C++ bindings for compatibility'
   option 'without-check', 'Disable checks (not recommended)'
 
-  resource 'cxx' do
-    url 'https://github.com/Unidata/netcdf-cxx4/archive/v4.2.1.tar.gz'
-    sha1 '0bb4a0807f10060f98745e789b6dc06deddf30ff'
-  end
+  #resource 'cxx' do
+  #  url 'https://github.com/Unidata/netcdf-cxx4/archive/v4.2.1.tar.gz'
+  #  sha1 '0bb4a0807f10060f98745e789b6dc06deddf30ff'
+  #end
 
   resource 'cxx-compat' do
-    url 'http://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-cxx-4.2.tar.gz'
-    sha1 'bab9b2d873acdddbdbf07ab35481cd0267a3363b'
+    url 'http://www.gfd-dennou.org/library/netcdf/unidata-mirror/netcdf-cxx-4.2.tar.gz'
+    sha256 '95ed6ab49a0ee001255eac4e44aacb5ca4ea96ba850c08337a3e4c9a0872ccd1'
   end
 
   resource 'fortran' do
-    url 'http://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-fortran-4.2.tar.gz'
-    sha1 'f1887314455330f4057bc8eab432065f8f6f74ef'
+    url 'http://www.gfd-dennou.org/library/netcdf/unidata-mirror/netcdf-fortran-4.4.2.tar.gz'
+    sha256 'ad6249b6062df6f62f81d1cb2a072e3a4c595f27f11fe0c5a79726d1dad3143b'
   end
 
   def install
