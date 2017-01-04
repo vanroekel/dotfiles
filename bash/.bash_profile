@@ -174,3 +174,5 @@ fi #}}}
 # added by Anaconda2 2.4.0 installer
 #export PATH=$PATH:"/Users/pwolfram/anaconda/bin"
 export PATH="/usr/local/bin:/Users/pwolfram/anaconda/bin":$PATH
+PATH=$(for d in ${PATH//:/ }; do [ -x $d ] && printf "$d\n"; done | uniq | tr '\12' ':')
+PATH=${PATH%?}
