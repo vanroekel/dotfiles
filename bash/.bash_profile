@@ -107,13 +107,11 @@ if [ $platform == 'macosx' ]; then  #{{{
   # Your previous /Users/pwolfram/.bash_profile file was backed up as /Users/pwolfram/.bash_profile.macports-saved_2014-01-07_at_16:00:10
   ##
 
-  source `brew --repository`/Library/Contributions/brew_bash_completion.sh
+  source /usr/local/Homebrew/completions/bash/brew
+  #`brew --repository`/Library/Contributions/brew_bash_completion.sh
 
   export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-  # flags necessary for development on OS X (Mavericks)
-  export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
-  export MPACOSX_DEPLOYMENT_TARGET=10.9
 
   #export PYTHONDIR=/Library/Frameworks/Python.framework/Versions/2.7/bin
   #export PYTHONPATH=$PYTHONPATH:/Library/Frameworks/Python.framework/Versions/2.7/bin
@@ -171,8 +169,6 @@ if [ $platform == 'macosx' ]; then  #{{{
   alias xdvi='/usr/local/texlive/2013/bin/universal-darwin/xdvi'
 fi #}}}
 
-# added by Anaconda2 2.4.0 installer
-#export PATH=$PATH:"/Users/pwolfram/anaconda/bin"
-export PATH="/usr/local/bin:/Users/pwolfram/anaconda/bin":$PATH
+export PATH="/Users/pwolfram/miniconda2/bin:$PATH"
 PATH=$(for d in ${PATH//:/ }; do [ -x $d ] && printf "$d\n"; done | uniq | tr '\12' ':')
 PATH=${PATH%?}
