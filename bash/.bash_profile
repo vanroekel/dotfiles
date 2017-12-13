@@ -147,7 +147,7 @@ if [ $platform == 'macosx' ]; then  #{{{
   #export NETCDF=/opt/netcdf-4.1.3/
   #export PNETCDF=/opt/parallel-netcdf-1.4.1/
   #export PIO=/opt/pio-1.7.1/
-  export NETCDF=/usr/local/Cellar/netcdf/4.3.1.1/
+  export NETCDF=/usr/local/Cellar/netcdf/4.3.3.1/
   export PNETCDF=/usr/local/Cellar/parallel-netcdf/1.4.1/
   export PIO=/usr/local/Cellar/pio/1.7.2/
 
