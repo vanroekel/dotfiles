@@ -28,7 +28,6 @@ done
 
 case $WORKIP in
  	"yes") export http_proxy="http://proxyout.lanl.gov:8080"
-    export all_proxy=proxyout.lanl.gov:8080
  		#export https_proxy="https://proxyout.lanl.gov:8080"
  		export ftp_proxy="http://proxyout.lanl.gov"
  		export no_proxy="*.lanl.gov"
