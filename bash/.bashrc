@@ -94,12 +94,8 @@ if [ -f ~/.bash_profile ]; then
     fi
 fi
 
-#homebrew token
-export HOMEBREW_GITHUB_API_TOKEN=`cat ~/.github_token`
-
 # enable ctrl+s to not stop terminal so it can do ctrl+r forward / ctrl+s back searches
 stty -ixon
 
-source ~/scripts/setup_module.sh
 source ~/scripts/find_host.sh
 source ~/scripts/set_proxy_info.sh

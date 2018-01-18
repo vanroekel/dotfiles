@@ -1,11 +1,11 @@
 [user]
-	name = Phillip J. Wolfram
-	email = phillipwolfram@gmail.com
+	name = Luke Van Roekel 
+	email = luke.vanroekel@gmail.com 
 [core]
 	editor = vim
 	autocrlf = input
 	whitespace = trailing-space
-	excludesfile = ~/.git_core_excludes
+	excludesfile = /home/lvanroe/dot-files/git/core_excludes
 [giggle]
 	main-window-maximized = false
 	main-window-geometry = 944x754+213+24
@@ -15,51 +15,24 @@
 [web]
 	browser = google-chrome
 [alias]
-  # following http://jondavidjohn.com/git-aliases-parameters/
-	grepall = "!f() { gitgreptmp=$1; { git submodule foreach 'git --no-pager grep \"'$gitgreptmp'\"; true' & git --no-pager grep \"$gitgreptmp\"; } }; f"
 	logg = log --graph --oneline --abbrev-commit --decorate
 	export = !sh -c 'git archive ${1} | tar xv -C ${2}' -
 	st = status
-	di = difftool --tool=gvimdiff --no-prompt
-	ci = commit -a
-	up = fetch --all -p
+    up = fetch --all -p
 	co = checkout
-	rb = rebase
 	rc = rebase --continue
-	rd = !git ls-files -d | xargs git checkout --
-  path-br = "!bash -xc \"git checkout -b \"${PWD#${PWD%/*/*}/}\" MPAS-Dev/MPAS/develop\""
-  g = grep --break --heading --line-number
-  # http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html
-	ctags = !.git/hooks/ctags
-[diff]
-  tool = vimdiff
-[grep]
-  extendRegexp = true
-  lineNumber = true
+	path-br = "!bash -xc \"git checkout -b \"${PWD#${PWD%/*/*}/}\" MPAS-Dev/MPAS/develop\""
+	plg = log --graph --format=\"%CredH: %C(auto)%h %CredA: %Cblue %aE %Cred S: %Creset %s %C(auto) %d\"
 [color]
-  ui = true
-# use Apple's merge tool if commented
+	ui = true
 [merge]
 	tool = vimdiff
 	summary = true
-	ff = false
 [github]
-	user = pwolfram
+	user = vanroekel 
 [push]
-	default = nothing
+	default = current
 [http]
-[filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
-[http]
-	proxy = http://proxyout.lanl.gov:8080
+	proxy = 
 [rerere]
 	enabled = 1
-[init]
-	templatedir = ~/.git_template
-[log]
-	date = local
-[filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true

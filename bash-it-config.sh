@@ -2,7 +2,7 @@
 
 bash-it disable plugin javascript
 bash-it disable plugin jekyll
-#bash-it disable plugin latex
+bash-it disable plugin latex
 bash-it disable plugin nginx
 #bash-it disable plugin osx
 bash-it disable plugin ruby

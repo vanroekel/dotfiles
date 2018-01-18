@@ -16,13 +16,13 @@ elif [ "${HOST_CHECK}" == "ml" ]; then
     source ${SCRIPT_DIR}/add_modules.sh
     module load friendly-testing
     module load python-epd/7.3.2 cmake
-elif [ "${HOST_CHECK}" == "bl" ]; then
+  elif [ "${HOST_CHECK}" == "blogin" ] || [ "${HOST_CHECK}" == "b" ]; then
     export NETCDF_PATH=/soft/spack-0.9.1/opt/spack/linux-centos6-x86_64/intel-17.0.0/netcdf-4.4.1-gpk22cidfgknxbc6wjuimdkqifhfhg2j
     export PNETCDF_PATH=/soft/spack-0.9.1/opt/spack/linux-centos6-x86_64/intel-17.0.0/parallel-netcdf-1.7.0-v6lbtz7i6ng4oeay53iz74w7krgkdlwq
     export NETCDF=$NETCDF_PATH
     export PNETCDF=$PNETCDF_PATH
     export PIO=/home/lvanroe/libpio
-    unset LS_COLORS
+    alias cds='cd /lcrc/group/acme/lvanroe'
     # added by Miniconda2 4.1.11 installer
     export PATH="/home/zender/bin:/lcrc/group/acme/lvanroe/conda/bin:$PATH"
     export PYTHONPATH="/home/lvanroe/python_scripts:${PYTHONPATH}"
