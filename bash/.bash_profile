@@ -81,9 +81,6 @@ if [ $platform == 'nix' ]; then #{{{
   alias pv="/usr/projects/climate/mpeterse/software/ParaView-4.1.0-RC2-Linux-64bit/bin/paraview"
   alias metis="/usr/projects/climate/SHARED_CLIMATE/software/mustang/metis/4.0/kmetis"
 
-  # load compiler environment
-  source /usr/projects/climate/SHARED_CLIMATE/scripts/mustang_intel_openmpi.sh
-
 fi  #}}}
 
 if [ $platform == 'macosx' ]; then  #{{{

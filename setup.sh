@@ -1,5 +1,5 @@
 #!/bin/bash
-BASH_IT_ADDR="git@github.com:pwolfram/bash-it.git"
+BASH_IT_ADDR="git@github.com:vanroekel/bash-it.git"
 VUNDLE_ADDR="git@github.com:gmarik/vundle.git"
 
 if [ -f ~/.vim ]; then
