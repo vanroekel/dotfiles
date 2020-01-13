@@ -164,12 +164,6 @@ set expandtab
 set backspace+=indent,eol,start
 "}}}}
 
-" automatically save and load folds {{{
-"au BufWinLeave * silent! mkview
-"au BufWinEnter * silent! loadview
-set foldmethod=marker
-" }}}
-
 " function key mappings {{{
 "set pastetoggle=<F3>
 noremap <F2> @='a!PJW '<CR>
@@ -287,11 +281,6 @@ nnoremap <silent> <leader>tf :tabfirst<CR>
 nnoremap <leader>fw :%s/ \+$//g<CR>
 "}}}
 
-"xml syntax folding {{{
-let g:xml_syntax_folding=1
-au FileType xml setlocal foldmethod=syntax
-au FileType xsd setlocal foldmethod=syntax
-"}}}
 
 "colorscheme http://vimcolorschemetest.googlecode.com/svn/html/index-html.html{{{
 syntax enable
